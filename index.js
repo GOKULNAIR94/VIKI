@@ -77,8 +77,12 @@ module.exports = function( req, res ) {
               try
               {
                 responseObject = JSON.parse(body);
-                speech = responseObject.speech;
-                return res.json({
+                if( typeof responseObject.speech != "object")
+                    speech = responseObject.speech;
+                else
+                    speech = responseObject.speech.speech;
+                
+                  return res.json({
                   speech: speech,
                   displayText: speech
                 })
