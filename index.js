@@ -36,7 +36,7 @@ module.exports = function( req, res ) {
             varPath = '/inputmsg'; 
         }
     
-    if( intentName == 'Budget' || intentName == 'Expense' ){
+    if( intentName == 'Budget' || intentName == 'Expense' || intentName == 'EmployeeData' ){
             varHost = 'vikiviki.herokuapp.com';
             varPath = '/inputmsg'; 
         }
