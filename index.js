@@ -78,7 +78,7 @@ module.exports = function( req, res ) {
               {
                 responseObject = JSON.parse(body);
                 if( typeof responseObject.speech != "object")
-                    speech = responseObjectss;
+                    speech = responseObject;
                 else
                     speech = responseObject.speech.speech;
                 
