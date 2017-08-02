@@ -82,6 +82,7 @@ module.exports = function( req, res ) {
                 else
                     speech = responseObject.speech.speech;
                 
+                console.log( "speech : " + speech );
                   return res.json({
                   speech: speech,
                   displayText: speech
