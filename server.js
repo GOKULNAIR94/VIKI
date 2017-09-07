@@ -13,7 +13,15 @@ restService.use(bodyParser.json());
 var Index = require("./index");
 
 restService.post('/inputmsg', function(req, res) {
+    
     try{
+        
+        var userid = req.body.originalRequest.data.user.user_id;
+        var accessToken = req.body.originalRequest.data.user.access_token;
+        console.log( "userid : " + userid );
+        console.log( "accessToken : " + accessToken );
+
+        
         http.get("https://vikinews.herokuapp.com");
         http.get("https://vikiviki.herokuapp.com");
         http.get("https://salty-tor-67194.herokuapp.com");
