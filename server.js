@@ -15,14 +15,20 @@ var Index = require("./index");
 restService.post('/inputmsg', function(req, res) {
     
     try{
-        var Id = req.body.Id;
-        console.log( "Id : " + Id );
-        
-        var userid = req.body.originalRequest.data.user.user_id;
-        console.log( "userid : " + userid );
-        
-        var accessToken = req.body.originalRequest.data.user.access_token;
-        console.log( "accessToken : " + accessToken );
+//        var Id = req.body.Id;
+//        console.log( "Id : " + Id );
+//        
+//        var userid = req.body.originalRequest.data.user.user_id;
+//        console.log( "userid : " + userid );
+//        
+//        var accessToken = req.body.originalRequest.data.user.access_token;
+//        console.log( "accessToken : " + accessToken );
+        console.log( "req.body : " + req.body );
+        var speech = "req.body";
+        return res.json({
+            speech: speech,
+            displayText: speech
+        })
 
         
         http.get("https://vikinews.herokuapp.com");
