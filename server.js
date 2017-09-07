@@ -18,13 +18,13 @@ restService.post('/inputmsg', function(req, res) {
 //        var Id = req.body.Id;
 //        console.log( "Id : " + Id );
 //        
-//        var userid = req.body.originalRequest.data.user.user_id;
-//        console.log( "userid : " + userid );
+        var userid = req.body.originalRequest.data.user;
+        console.log( "userid : " + userid );
 //        
 //        var accessToken = req.body.originalRequest.data.user.access_token;
 //        console.log( "accessToken : " + accessToken );
-        var stringyJSON = JSON.stringify(req.body);
-        console.log( "stringJSON : " + stringyJSON );
+//        var stringyJSON = JSON.stringify(req.body);
+//        console.log( "stringJSON : " + stringyJSON );
         
 
         
