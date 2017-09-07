@@ -57,7 +57,7 @@ module.exports = function( req, res ) {
         var newoptions = {
           host: varHost,
           path: varPath,
-          data: req,
+          data: req.body,
           method:'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -103,7 +103,7 @@ module.exports = function( req, res ) {
               displayText: speech
             })
         });
-        post_req.write(JSON.stringify(req));
+        post_req.write(JSON.stringify(req.body));
         post_req.end();
       
     }
