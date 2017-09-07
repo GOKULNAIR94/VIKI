@@ -23,12 +23,9 @@ restService.post('/inputmsg', function(req, res) {
 //        
 //        var accessToken = req.body.originalRequest.data.user.access_token;
 //        console.log( "accessToken : " + accessToken );
-        console.log( "req.body : " + req.body );
-        var speech = req.body;
-        return res.json({
-            speech: speech,
-            displayText: speech
-        })
+        var stringyJSON = JSON.stringify(req.body);
+        console.log( "stringJSON : " + stringyJSON );
+        
 
         
         http.get("https://vikinews.herokuapp.com");
