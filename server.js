@@ -17,9 +17,10 @@ restService.post('/inputmsg', function(req, res) {
     try{
 //        var Id = req.body.Id;
 //        console.log( "Id : " + Id );
-//        
-        var userid = req.body.originalRequest.data.user;
-        console.log( "userid : " + userid );
+        if( req.body.originalRequest != null ){
+			var userid = req.body.originalRequest.data.user;
+			console.log( "userid : " + userid );
+		}
 //        
 //        var accessToken = req.body.originalRequest.data.user.access_token;
 //        console.log( "accessToken : " + accessToken );
