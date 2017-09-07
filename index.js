@@ -54,6 +54,8 @@ module.exports = function( req, res ) {
         console.log( "varHost : " + varHost );
         console.log( "varPath : " + varPath);
 
+        req.body.headers = req.headers;
+
         var newoptions = {
           host: varHost,
           path: varPath,
