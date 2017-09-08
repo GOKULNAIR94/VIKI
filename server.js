@@ -50,7 +50,7 @@ console.log('Req : '+ JSON.stringify(request.body)  );
     var respString = "", resObj;
   var post_req = https.request(newoptions, function(res) {
       res.on('data', function (chunk) {
-          //console.log('Response: ' + chunk);
+          console.log('Response: ' + chunk);
           respString = respString + chunk;
       });
         res.on('end', function() {
