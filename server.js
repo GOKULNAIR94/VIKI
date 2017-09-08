@@ -68,7 +68,7 @@ var GetAuth = require("./getauth");
 restService.post('/inputmsg', function(req, res) {
     
     try{
-        console.log("Req  : " + JSON.stringify(req.headers));
+        console.log("Req  : " + JSON.stringify(req.body));
         req.body.headers = req.headers;
 //        var Id = req.body.Id;
 //        console.log( "Id : " + Id );
