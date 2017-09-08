@@ -17,7 +17,7 @@ app.controller('mainCont', function($scope, $http, $location) {
         $http(req).then(function (result) {
             console.log( " Id ye : " + result.Id);
             if( result.Id != null){
-                alert("Login Successfull");
+                alert("Login Successfull!");
             }
             else{
                 alert("Login Failed! Please check the credentials and try again!");
