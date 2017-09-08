@@ -52,8 +52,7 @@ console.log('Req : '+ JSON.stringify(request.body)  );
           console.log('Response: ' + chunk);
       });
         res.on('end', function() {
-        console.log('Response end: ' );
-        response.send({statusCode : 200});
+        response.send("Login Successfull!");
       })
     }).on('error', function(e){
       response.send("Login Failed! Please Check the credentials and try again!");
