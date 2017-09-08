@@ -55,7 +55,7 @@ console.log('Req : '+ JSON.stringify(request.body)  );
       });
         res.on('end', function() {
             console.log('rES sTATUS: ' + JSON.stringify(res.statusCode));
-            if( res.statusCode == 200 || res.statusCode == 206 )
+            if( res.statusCode >= 200 && res.statusCode < 300 )
                 response.send("Login Successfull!");
             else
                 response.send("Login Failed! Please Check the credentials and try again!");
