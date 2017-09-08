@@ -52,7 +52,7 @@ console.log('Req : '+ JSON.stringify(request.body)  );
           console.log('Response: ' + chunk);
       });
         res.on('end', function() {
-        alert('Response end: ' );
+        console.log('Response end: ' );
         response.send({statusCode : 200});
       })
     }).on('error', function(e){
