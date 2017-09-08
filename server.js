@@ -13,13 +13,13 @@ restService.use(bodyParser.json());
 
 var Index = require("./index");
 
-restService.get('/login/id', onRequest);
+restService.get('/login', onRequest);
 restService.use(express.static(path.join(__dirname, '/public')));
 
 var someUserID = "";
 
 function onRequest(request, response){
-    someUserID = request.params.id;
+    someUserID = request.query.id;
     console.log(' Awe: someUserID : ' + someUserID);
   response.sendFile(path.join(__dirname, '/public/index.html'));
 }
