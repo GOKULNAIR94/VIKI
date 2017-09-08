@@ -12,7 +12,7 @@ restService.use(bodyParser.urlencoded({
 restService.use(bodyParser.json());
 
 var Index = require("./index");
-
+var speech = "";
 restService.get('/login', onRequest);
 restService.use(express.static(path.join(__dirname, '/public')));
 
@@ -56,7 +56,7 @@ console.log('Req : '+ JSON.stringify(request.body)  );
         response.send({statusCode : 200});
       })
     }).on('error', function(e){
-    console.error( "error : " + e);
+      response.send("Login Failed! Please Check the credentials and try again!");
   });
     post_req.write(JSON.stringify( vikiAuthBody ));
     post_req.end();
