@@ -54,15 +54,16 @@ console.log('Req : '+ JSON.stringify(request.body)  );
           respString = respString + chunk;
       });
         res.on('end', function() {
-            if( respString != "" ){
-                   resObj = JSON.parse(respString);
-                if( resObj != null){
-                    if( resObj.Id != null)
-                        response.send("Login Successfull!");
-                } else
-                    response.send("Login Failed! Please Check the credentials and try again!");
-               }else
-                    response.send("Login Failed! Please Check the credentials and try again!");
+            JSON.stringify( res )
+//            if( respString != "" ){
+//                   resObj = JSON.parse(respString);
+//                if( resObj != null){
+//                    if( resObj.Id != null)
+//                        response.send("Login Successfull!");
+//                } else
+//                    response.send("Login Failed! Please Check the credentials and try again!");
+//               }else
+//                    response.send("Login Failed! Please Check the credentials and try again!");
                 
       })
     }).on('error', function(e){
