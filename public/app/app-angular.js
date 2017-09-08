@@ -15,10 +15,14 @@ app.controller('mainCont', function($scope, $http, $location) {
             data: newuser
         }
         $http(req).then(function (result) {
-            console.log(result);
-            setTimeout(function () {
-                alert("AWESOME!!!");
-            }, 500);
+            console.log(result.Id);
+            if( result.Id != null){
+                alert("Login Successfull");
+            }
+            else{
+                alert("Login Failed! Please check the credentials and try again!");
+            }
+            
         });
     };
     
