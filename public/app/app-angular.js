@@ -15,8 +15,8 @@ app.controller('mainCont', function($scope, $http, $location) {
             data: newuser
         }
         $http(req).then(function (result) {
-            console.log( "Result : " + result);
-            alert(result);
+            console.log( "Result : " + JSON.stringify(result));
+            alert("Hi");
             
         });
     };
