@@ -54,7 +54,7 @@ console.log('Req : '+ JSON.stringify(request.body)  );
           respString = respString + chunk;
       });
         res.on('end', function() {
-            if( res.statusCode != 200)
+            if( res.statusCode == 200)
                 response.send("Login Successfull!");
             else
                 response.send("Login Failed! Please Check the credentials and try again!");
