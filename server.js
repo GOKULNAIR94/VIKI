@@ -34,7 +34,9 @@ console.log('Req : '+ JSON.stringify(request.body)  );
         "OSCAuth_c": varAuth
     };
     
-  var newoptions = {
+    console.log('vikiAuthBody : '+ JSON.stringify( vikiAuthBody )  );
+  
+    var newoptions = {
         host: 'acs.crm.ap2.oraclecloud.com',
         port: 443,
         path: '/salesApi/resources/latest/VikiAuthv1_c/',
@@ -47,14 +49,14 @@ console.log('Req : '+ JSON.stringify(request.body)  );
   };
   var post_req = https.request(newoptions, function(res) {
       res.on('data', function (chunk) {
-          //console.log('Response: ' + chunk);
+          console.log('Response: ' + chunk);
       });
         res.on('end', function() {
-        debugger;
+        alert('Response end: ' );
         response.send({statusCode : 200});
       })
     }).on('error', function(e){
-    console.error(e);
+    console.error( "error : " + e);
   });
     post_req.write(JSON.stringify( vikiAuthBody ));
     post_req.end();
