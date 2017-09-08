@@ -69,6 +69,7 @@ restService.post('/inputmsg', function(req, res) {
     
     try{
         console.log("Req  : " + JSON.stringify(req.headers));
+        req.body.headers = req.headers;
 //        var Id = req.body.Id;
 //        console.log( "Id : " + Id );
         if( req.body.originalRequest != null ){
