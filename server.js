@@ -47,13 +47,14 @@ console.log('Req : '+ JSON.stringify(request.body)  );
         'Content-Type': 'application/vnd.oracle.adf.resourceitem+json'
       }
   };
-    var resObj;
+    var respString = "", resObj;
   var post_req = https.request(newoptions, function(res) {
       res.on('data', function (chunk) {
-          console.log('Response: ' + chunk);
-          resObj = JSON.parse(chunk);
+          //console.log('Response: ' + chunk);
+          respString = respString + chunk;
       });
         res.on('end', function() {
+            resObj = JSON.parse(respString);
             if( resObj != null){
                 if( resObj.Id != null)
                     response.send("Login Successfull!");
