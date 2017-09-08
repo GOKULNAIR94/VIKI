@@ -12,6 +12,13 @@ restService.use(bodyParser.json());
 
 var Index = require("./index");
 
+restService.get('/login', onRequest);
+restService.use(express.static(path.join(__dirname, '/public')));
+
+function onRequest(request, response){
+  response.sendFile(path.join(__dirname, '/public/index.html'));
+}
+
 restService.post('/inputmsg', function(req, res) {
     
     try{
