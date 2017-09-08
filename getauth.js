@@ -38,7 +38,7 @@ module.exports = function ( req, res, callback){
             });
         });
     } catch (e) {
-        console.log("No Og req");
+        console.log("No Og req : " + e);
     }
     
 }
