@@ -68,6 +68,7 @@ console.log('Req : '+ JSON.stringify(request.body)  );
                 
       })
     }).on('error', function(e){
+      console.log('error: ' + error);
       response.send("Error : " + error );
   });
     post_req.write(JSON.stringify( vikiAuthBody ));
