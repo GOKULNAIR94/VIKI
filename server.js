@@ -3,7 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const restService = express();
-var http = require('https');
+var https = require('https');
 var fs = require('fs'),
     path = require('path');
 restService.use(bodyParser.urlencoded({
@@ -80,10 +80,10 @@ restService.post('/inputmsg', function(req, res) {
         
 
         
-        http.get("https://vikinews.herokuapp.com");
-        http.get("https://vikiviki.herokuapp.com");
-        http.get("https://salty-tor-67194.herokuapp.com");
-        http.get("https://opty.herokuapp.com");
+        https.get("https://vikinews.herokuapp.com");
+        https.get("https://vikiviki.herokuapp.com");
+        https.get("https://salty-tor-67194.herokuapp.com");
+        https.get("https://opty.herokuapp.com");
 
         Index( req, res, function( result ) {
             console.log("Index Called");
