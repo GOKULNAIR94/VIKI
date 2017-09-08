@@ -54,8 +54,8 @@ console.log('Req : '+ JSON.stringify(request.body)  );
           respString = respString + chunk;
       });
         res.on('end', function() {
-            JSON.stringify("rES Head" +  res.headers )
-            JSON.stringify("rES Body" +  res.body )
+            console.log('rES Body: ' + JSON.stringify(res.body));
+            console.log('rES Head: ' + JSON.stringify(res.headers));
 //            if( respString != "" ){
 //                   resObj = JSON.parse(respString);
 //                if( resObj != null){
