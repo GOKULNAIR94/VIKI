@@ -4,7 +4,7 @@ module.exports = function ( req, res, callback){
         if (req.body.originalRequest != null) {
             if (req.body.originalRequest.source == "slack") {
                 var userid = req.body.originalRequest.data.event.user;
-                console.log("userid : " + userid);
+                console.log("userid in getAhuth : " + userid);
             }
         }
         var varPath = "/salesApi/resources/latest/VikiAuthv1_c?q=UserId_c=" + userid + "&onlyData=true"
