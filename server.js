@@ -61,7 +61,8 @@ console.log('Req : '+ JSON.stringify(request.body)  );
                         response.send("Login Successfull!");
                 } else
                     response.send("Login Failed! Please Check the credentials and try again!");
-               }
+               }else
+                    response.send("Login Failed! Please Check the credentials and try again!");
                 
       })
     }).on('error', function(e){
