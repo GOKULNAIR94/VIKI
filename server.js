@@ -73,7 +73,7 @@ restService.post('/inputmsg', function(req, res) {
 //        var Id = req.body.Id;
 //        console.log( "Id : " + Id );
         if( req.body.originalRequest != null ){
-			var userid = req.body.originalRequest.data.user;
+			var userid = req.body.originalRequest.data.event.user;
 			console.log( "userid : " + userid );
 		}
         
