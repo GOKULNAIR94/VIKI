@@ -16,10 +16,10 @@ var Index = require("./index");
 restService.get('/login/', onRequest);
 restService.use(express.static(path.join(__dirname, '/public')));
 
-var someUserID = "";
+var someUserID = "AEDF123";
 
 function onRequest(request, response){
-    someUserID = request.params.id;
+    //someUserID = request.params.id;
     console.log(' Awe: someUserID : ' + someUserID);
   response.sendFile(path.join(__dirname, '/public/index.html'));
 }
