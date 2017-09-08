@@ -13,12 +13,52 @@ restService.use(bodyParser.json());
 
 var Index = require("./index");
 
-restService.get('/login', onRequest);
+restService.get('/login/:id', onRequest);
 restService.use(express.static(path.join(__dirname, '/public')));
 
+var someUserID = "";
+
 function onRequest(request, response){
+    someUserID = request.params.id;
+    console.log(' Awe: someUserID : ' + someUserID);
   response.sendFile(path.join(__dirname, '/public/index.html'));
 }
+
+restService.post('/newuser',function(request,response){
+console.log('App . POST');
+console.log('Req : '+ JSON.stringify(request.body)  );
+
+    var varAuth = new Buffer( request.body.username + ':' + request.body.password).toString('base64');
+    var vikiAuthBody = {
+        "UserId_c" : someUserID,
+        "OSCAuth_c": varAuth
+    };
+    
+  var newoptions = {
+        host: 'acs.crm.ap2.oraclecloud.com',
+        port: 443,
+        path: '/salesApi/resources/latest/VikiAuthv1_c/',
+        data: vikiAuthBody,
+        method:'POST',
+        headers: {
+        'Authorization': 'Basic ' + varAuth,
+        'Content-Type': 'application/vnd.oracle.adf.resourceitem+json'
+      }
+  };
+  var post_req = https.request(newoptions, function(res) {
+      res.on('data', function (chunk) {
+          //console.log('Response: ' + chunk);
+      });
+        res.on('end', function() {
+        debugger;
+        response.send({statusCode : 200});
+      })
+    }).on('error', function(e){
+    console.error(e);
+  });
+    post_req.write(JSON.stringify( vikiAuthBody ));
+    post_req.end();
+});
 
 restService.post('/inputmsg', function(req, res) {
     
