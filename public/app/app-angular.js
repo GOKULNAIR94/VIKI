@@ -16,7 +16,11 @@ app.controller('mainCont', function($scope, $http, $location) {
         }
         $http(req).then(function (result) {
             console.log( "Result : " + JSON.stringify(result));
-            alert("Hi");
+            if(result.status == 200)
+                alert(result.data);
+            else{
+                alert("Error");
+            }
             
         });
     };
