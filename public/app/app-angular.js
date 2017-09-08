@@ -11,7 +11,7 @@ app.controller('mainCont', function($scope, $http, $location) {
         console.log(newuser);
         var req = {
             method: 'POST',
-            url: 'https://vikinews.herokuapp.com/newuser',
+            url: 'https://vikii.herokuapp.com/newuser',
             data: newuser
         }
         $http(req).then(function (result) {
