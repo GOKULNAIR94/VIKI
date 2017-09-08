@@ -54,9 +54,10 @@ console.log('Req : '+ JSON.stringify(request.body)  );
           resObj = JSON.parse(chunk);
       });
         res.on('end', function() {
-            if( resObj.Id != null)
-                response.send("Login Successfull!");
-            else
+            if( resObj != null){
+                if( resObj.Id != null)
+                    response.send("Login Successfull!");
+            } else
                 response.send("Login Failed! Please Check the credentials and try again!");
                 
       })
