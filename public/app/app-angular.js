@@ -5,19 +5,20 @@ app.run(function(){
 
 
 app.controller('mainCont', function($scope, $http, $location) {
-    $scope.sendData = function (newuser) {
-        console.log(newuser);
-        var req = {
-            method: 'POST',
-            url: 'https://vikinews.herokuapp.com/newuser',
-            data: newuser
-        }
-        $http(req).then(function (result) {
-            console.log(result);
-            setTimeout(function () {
-                alert("AWESOME!!!");
-            }, 500);
-        });
-    };
+    
+//    $scope.sendData = function (newuser) {
+//        console.log(newuser);
+//        var req = {
+//            method: 'POST',
+//            url: 'https://vikinews.herokuapp.com/newuser',
+//            data: newuser
+//        }
+//        $http(req).then(function (result) {
+//            console.log(result);
+//            setTimeout(function () {
+//                alert("AWESOME!!!");
+//            }, 500);
+//        });
+//    };
     
 });
