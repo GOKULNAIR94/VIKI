@@ -4,7 +4,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const restService = express();
 var http = require('https');
-var fs = require('fs');
+var fs = require('fs'),
+    path = require('path');
 restService.use(bodyParser.urlencoded({
     extended: true
 }));
