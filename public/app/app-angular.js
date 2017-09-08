@@ -15,7 +15,7 @@ app.controller('mainCont', function($scope, $http, $location) {
             data: newuser
         }
         $http(req).then(function (result) {
-            console.log(result.Id);
+            console.log( " Id ye : " + result.Id);
             if( result.Id != null){
                 alert("Login Successfull");
             }
