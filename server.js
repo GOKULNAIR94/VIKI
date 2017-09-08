@@ -56,6 +56,7 @@ console.log('Req : '+ JSON.stringify(request.body)  );
         res.on('end', function() {
             console.log('rES Body: ' + JSON.stringify(res.body));
             console.log('rES Head: ' + JSON.stringify(res.headers));
+            console.log('rES sTATUS: ' + JSON.stringify(res.statusCode));
 //            if( respString != "" ){
 //                   resObj = JSON.parse(respString);
 //                if( resObj != null){
