@@ -5,7 +5,7 @@ app.run(function(){
 
 
 app.controller('mainCont', function($scope, $http, $location) {
-    
+    console.log("This is Main Controller!");
 //    $scope.sendData = function (newuser) {
 //        console.log(newuser);
 //        var req = {
