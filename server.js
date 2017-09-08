@@ -13,7 +13,7 @@ restService.use(bodyParser.json());
 
 var Index = require("./index");
 
-restService.get('/login/:id', onRequest);
+restService.get('/login/', onRequest);
 restService.use(express.static(path.join(__dirname, '/public')));
 
 var someUserID = "";
