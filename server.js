@@ -62,6 +62,9 @@ console.log('Req : '+ JSON.stringify(request.body)  );
     post_req.end();
 });
 
+
+var GetAuth = require("./getauth");
+
 restService.post('/inputmsg', function(req, res) {
     
     try{
@@ -72,6 +75,27 @@ restService.post('/inputmsg', function(req, res) {
 			var userid = req.body.originalRequest.data.user;
 			console.log( "userid : " + userid );
 		}
+        
+        GetAuth( req, res, function( req, res, rowCount ){
+            if ( rowCount == 0 ) {
+                speech = "Please Login @ https://vikii.herokuapp.com/login?id=" + userid;
+                return res.json({
+                    speech: speech,
+                    displayText: speech,
+                    source: 'webhook-OSC-oppty'
+                });
+            }
+            else if( rowCount == 1 ){
+                    https.get("https://vikinews.herokuapp.com");
+                    https.get("https://vikiviki.herokuapp.com");
+                    https.get("https://salty-tor-67194.herokuapp.com");
+                    https.get("https://opty.herokuapp.com");
+
+                    Index( req, res, function( result ) {
+                        console.log("Index Called");
+                    });
+                }
+        });
 //        
 //        var accessToken = req.body.originalRequest.data.user.access_token;
 //        console.log( "accessToken : " + accessToken );
@@ -80,14 +104,7 @@ restService.post('/inputmsg', function(req, res) {
         
 
         
-        https.get("https://vikinews.herokuapp.com");
-        https.get("https://vikiviki.herokuapp.com");
-        https.get("https://salty-tor-67194.herokuapp.com");
-        https.get("https://opty.herokuapp.com");
-
-        Index( req, res, function( result ) {
-            console.log("Index Called");
-        });
+        
     }
     catch(e)
     {
