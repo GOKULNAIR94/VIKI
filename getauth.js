@@ -1,4 +1,5 @@
 module.exports = function ( req, res, callback){
+    var https = require('https')
     try {
         if (req.body.originalRequest != null) {
             if (req.body.originalRequest.source == "slack") {
@@ -17,7 +18,7 @@ module.exports = function ( req, res, callback){
         };
         var responseString = '',
             resObj;
-        var request = http.get(options, function(resx) {
+        var request = https.get(options, function(resx) {
             resx.on('data', function(data) {
                 responseString += data;
             });
