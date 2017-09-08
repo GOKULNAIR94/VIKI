@@ -47,15 +47,21 @@ console.log('Req : '+ JSON.stringify(request.body)  );
         'Content-Type': 'application/vnd.oracle.adf.resourceitem+json'
       }
   };
+    var resObj;
   var post_req = https.request(newoptions, function(res) {
       res.on('data', function (chunk) {
           console.log('Response: ' + chunk);
+          resObj = JSON.parse(chunk);
       });
         res.on('end', function() {
-        response.send("Login Successfull!");
+            if( resObj.Id != null)
+                response.send("Login Successfull!");
+            else
+                response.send("Login Failed! Please Check the credentials and try again!");
+                
       })
     }).on('error', function(e){
-      response.send("Login Failed! Please Check the credentials and try again!");
+      response.send("Error : " + error );
   });
     post_req.write(JSON.stringify( vikiAuthBody ));
     post_req.end();
