@@ -79,8 +79,14 @@ restService.post('/inputmsg', function(req, res) {
 //        var Id = req.body.Id;
 //        console.log( "Id : " + Id );
         if( req.body.originalRequest != null ){
-			var userid = req.body.originalRequest.data.event.user;
-			console.log( "userid : " + userid );
+            if (req.body.originalRequest.source == "slack") {
+                userid = req.body.originalRequest.data.event.user;
+                console.log("Slack userid : " + userid);
+            }
+            if (req.body.originalRequest.source == "google") {
+                userid = req.body.originalRequest.data.user.userId;
+                console.log("Google userid : " + userid);
+            }
 		}
         
         GetAuth( req, res, function( req, res, rowCount ){
