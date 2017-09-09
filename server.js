@@ -17,7 +17,7 @@ restService.get('/login', onRequest);
 restService.use(express.static(path.join(__dirname, '/public')));
 
 var someUserID = "";
-
+var userid = "";
 function onRequest(request, response){
     someUserID = request.query.id;
     console.log(' Awe: someUserID : ' + someUserID);
