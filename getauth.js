@@ -7,6 +7,10 @@ module.exports = function ( req, res, callback){
                 userid = req.body.originalRequest.data.event.user;
                 console.log("Slack userid : " + userid);
             }
+            if (req.body.originalRequest.source == "twitter") {
+                userid = req.body.originalRequest.data.direct_message.sender_id;
+                console.log("Slack userid : " + userid);
+            }
             if (req.body.originalRequest.source == "google") {
                 userid = req.body.originalRequest.data.user.userId;
                 console.log("Google userid : " + userid);
