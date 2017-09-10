@@ -1,5 +1,6 @@
 module.exports = function ( req, res, callback){
-    var https = require('https')
+    var https = require('https');
+    var userid = "";
     try {
         if (req.body.originalRequest != null) {
             if (req.body.originalRequest.source == "slack") {
