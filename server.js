@@ -26,7 +26,7 @@ function onRequest(request, response){
 
 restService.post('/newuser',function(request,response){
 console.log('App . POST');
-//console.log('Req : '+ JSON.stringify(request.body)  );
+console.log('Req : '+ JSON.stringify(request.body)  );
 
     var varAuth = new Buffer( request.body.username + ':' + request.body.password).toString('base64');
     var vikiAuthBody = {
