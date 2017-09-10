@@ -87,7 +87,7 @@ restService.post('/inputmsg', function(req, res) {
         if( req.body.originalRequest != null ){
             if (req.body.originalRequest.source == "twitter") {
                 userid = req.body.originalRequest.data.direct_message.sender_id;
-                console.log("Slack userid : " + userid);
+                console.log("Tweet userid : " + userid);
             }
             if (req.body.originalRequest.source == "slack") {
                 userid = req.body.originalRequest.data.event.user;
