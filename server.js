@@ -85,6 +85,10 @@ restService.post('/inputmsg', function(req, res) {
 //        var Id = req.body.Id;
 //        console.log( "Id : " + Id );
         if( req.body.originalRequest != null ){
+            if (req.body.originalRequest.source == "skype") {
+                userid = req.body.originalRequest.data.address.user.id;
+                console.log("skype userid : " + userid);
+            }
             if (req.body.originalRequest.source == "twitter") {
                 userid = req.body.originalRequest.data.direct_message.sender_id;
                 console.log("Tweet userid : " + userid);
@@ -93,6 +97,7 @@ restService.post('/inputmsg', function(req, res) {
                 userid = req.body.originalRequest.data.event.user;
                 console.log("Slack userid : " + userid);
             }
+
             if (req.body.originalRequest.source == "google") {
                 userid = req.body.originalRequest.data.user.userId;
                 console.log("Google userid : " + userid);
