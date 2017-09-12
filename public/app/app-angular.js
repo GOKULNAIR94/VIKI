@@ -30,8 +30,11 @@ app.controller('mainCont', function($scope, $http, $location) {
             console.log( "Result : " + JSON.stringify(result));
             if(result.status == 200){
                 
-                if(result.data == "Success")
+                if(result.data == "Success"){
                     $location.path('\success');
+                    $scope.loginerror = "";
+                }
+                    
                 else{
                     $scope.loginerror = "Login failed! Please check the credentials and try again!";
                     $location.path('\/');                
