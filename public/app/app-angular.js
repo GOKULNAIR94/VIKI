@@ -31,11 +31,13 @@ app.controller('mainCont', function($scope, $http, $location) {
             if(result.status == 200){
                 
                 if(result.data == "Success"){
+                    $scope.loginerror = false;
                     $location.path('\success');
                     $scope.loginerror = "";
                 }
                     
                 else{
+                    $scope.loginerror = true;
                     $location.path('\/');                
                 }
                     
