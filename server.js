@@ -56,9 +56,9 @@ console.log('App . POST');
         res.on('end', function() {
             console.log('rES sTATUS: ' + JSON.stringify(res.statusCode));
             if( res.statusCode >= 200 && res.statusCode < 300 )
-                response.send("Login Successfull!");
+                response.send("Success");
             else
-                response.send("Login Failed! Please Check the credentials and try again!");
+                response.send("Fail");
       })
     }).on('error', function(e){
       console.log('error: ' + error);
