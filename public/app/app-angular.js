@@ -38,6 +38,7 @@ app.controller('mainCont', function($scope, $http, $location) {
                     
                 else{
                     $scope.loginerror = true;
+                    $scope.errormessage = "Please check the credentials and try again! ";
                     $location.path('\/');                
                 }
                     
@@ -45,6 +46,8 @@ app.controller('mainCont', function($scope, $http, $location) {
                 
             else{
                 alert("Error");
+                $scope.errormessage = "Unexpected Error Occured! Try again later!";
+                $location.path('\/');
             }
             
         });
