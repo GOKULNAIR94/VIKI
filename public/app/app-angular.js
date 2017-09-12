@@ -34,7 +34,6 @@ app.controller('mainCont', function($scope, $http, $location) {
                     $scope.loginerror = false;
                     $location.path('\success');
                     $scope.loginerror = "";
-                    window.close();
                 }
                     
                 else{
