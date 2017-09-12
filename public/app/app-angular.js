@@ -9,15 +9,19 @@ app.config(function($routeProvider) {    $routeProvider
     })
 .when("/success", {
         templateUrl : "success.html"
-    });
+    })
+.when("/loading", {
+        templateUrl : "loading.html"
+    };
 });
 
 
 app.controller('mainCont', function($scope, $http, $location) {
     console.log("This is Main Controller!");
-        
+    
     $scope.sendData = function (newuser) {
         console.log(newuser);
+        $location.path('\loading');
         var req = {
             method: 'POST',
             url: 'https://vikii.herokuapp.com/newuser',
