@@ -21,7 +21,6 @@ app.controller('mainCont', function($scope, $http, $location) {
     
     $scope.sendData = function (newuser) {
         console.log(newuser);
-        $location.path('\loading');
         var req = {
             method: 'POST',
             url: 'https://vikii.herokuapp.com/newuser',
