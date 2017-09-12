@@ -32,8 +32,10 @@ app.controller('mainCont', function($scope, $http, $location) {
                 
                 if(result.data == "Success")
                     $location.path('\success');
-                else
-                    alert(result.data);
+                else{
+                    $scope.loginerror = "Login failed! Please check the credentials and try again!";
+                }
+                    
             }
                 
             else{
