@@ -12,7 +12,7 @@ app.config(function($routeProvider) {    $routeProvider
     })
 .when("/loading", {
         templateUrl : "loading.html"
-    };
+    });
 });
 
 
