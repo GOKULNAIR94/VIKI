@@ -110,29 +110,31 @@ restService.post('/inputmsg', function(req, res) {
                 return res.json({
                     speech: speech,
                     displayText: speech,
-                    google: {
-                        'expectUserResponse': true,
-                        'isSsml': false,
-                        'noInputPrompts': [],
-                        'richResponse': {
-                            'items': [{
-                                    'simpleResponse': {
-                                        'textToSpeech': 'Please Login here:',
-                                        'displayText': 'This is a simple display text response for Action on Google.'
+                    date : {
+                        google: {
+                            'expectUserResponse': true,
+                            'isSsml': false,
+                            'noInputPrompts': [],
+                            'richResponse': {
+                                'items': [{
+                                        'simpleResponse': {
+                                            'textToSpeech': 'Please Login here:',
+                                            'displayText': 'This is a simple display text response for Action on Google.'
+                                        }
+                                    },
+                                    {
+                                        'basicCard': {
+                                            'title': 'Title: this is a title',
+                                            'buttons': [{
+                                                'title': 'This is a button',
+                                                'openUrlAction': {
+                                                    'url': 'https://assistant.google.com/'
+                                                }
+                                            }]
+                                        }
                                     }
-                                },
-                                {
-                                    'basicCard': {
-                                        'title': 'Title: this is a title',
-                                        'buttons': [{
-                                            'title': 'This is a button',
-                                            'openUrlAction': {
-                                                'url': 'https://assistant.google.com/'
-                                            }
-                                        }]
-                                    }
-                                }
-                            ]
+                                ]
+                            }
                         }
                     }
                 });
