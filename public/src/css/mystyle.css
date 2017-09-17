@@ -118,15 +118,12 @@ body{
   background-size: cover;
   position: relative;
 }
-.vikiHead{
-    margin-top: 40px;
-}
 
 .container{
     border-color: black;
     border-width: 1px 0px;
     border-style: solid;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255,255,255,0.4);
     min-height: 350px;
 }
 
