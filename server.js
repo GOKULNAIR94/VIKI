@@ -116,7 +116,7 @@ restService.post('/inputmsg', function(req, res) {
                             'isSsml': false,
                             'noInputPrompts': [],
                             "permissions_request": {
-                                "opt_context": "...",
+                                "opt_context": "",
                                 "permissions": [
                                   "NAME",
                                   "DEVICE_COARSE_LOCATION",
