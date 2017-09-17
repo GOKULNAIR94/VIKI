@@ -17,7 +17,8 @@ h1 {
 }
 
 .login-form {
-  width: 350px;
+  width: 450px;
+    min-height: 
   padding: 40px 30px;
   background: #eee;
   -moz-border-radius: 4px;
