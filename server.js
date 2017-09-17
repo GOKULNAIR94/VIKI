@@ -110,13 +110,25 @@ restService.post('/inputmsg', function(req, res) {
                 return res.json({
                     speech: speech,
                     displayText: speech,
-                    "buttons": [
-                      {
-                        "title": "View",
-                        "type": "web_url",
-                        "url": "https://vikii.herokuapp.com/login?id="
+                    "elements": [
+                        {
+                            "title": "City Bar",
+                            "image_url": "https://maps.google.com/?cid=2874291166720850239",
+                            "subtitle": "Test",
+                            "default_action": {
+                              "type": "web_url",
+                              "url": "https://maps.google.com/?cid=2874291166720850239"
+                            },
+                            "buttons": [
+                              {
+                                "title": "View",
+                                "type": "web_url",
+                                "url": "https://maps.google.com/?cid=2874291166720850239"
+                              }
+                            ]
+                          }
+                        ]
                       }
-                    ]
                 });
             }
             else if( rowCount == 1 ){
