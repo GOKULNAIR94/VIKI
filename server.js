@@ -112,13 +112,6 @@ restService.post('/inputmsg', function(req, res) {
                     displayText: speech,
                     "elements": [
                         {
-                            "title": "City Bar",
-                            "image_url": "https://maps.google.com/?cid=2874291166720850239",
-                            "subtitle": "Test",
-                            "default_action": {
-                              "type": "web_url",
-                              "url": "https://maps.google.com/?cid=2874291166720850239"
-                            },
                             "buttons": [
                               {
                                 "title": "View",
@@ -128,7 +121,6 @@ restService.post('/inputmsg', function(req, res) {
                             ]
                           }
                         ]
-                      }
                 });
             }
             else if( rowCount == 1 ){
