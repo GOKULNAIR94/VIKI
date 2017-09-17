@@ -107,50 +107,17 @@ restService.post('/inputmsg', function(req, res) {
         GetAuth( req, res, function( req, res, rowCount ){
             if ( rowCount == 0 ) {
                 speech = "Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! \nPlease Login @ https://vikii.herokuapp.com/login?id=" + userid;
-//                return res.json({
-//                    speech: speech,
-//                    displayText: speech,
-//                    source: 'webhook-OSC-oppty'
-//                });
-                
-                                            var varHost = 'vikinews.herokuapp.com';
-                                            var varPath = '/login?id=' + userid;
-                                                console.log( "WOWOWOWOW : " + userid);
-                                            var newoptions = {
-                                                host: varHost,
-                                                path: varPath,
-                                                method: 'POST',
-                                                headers: {
-                                                    'Content-Type': 'application/json'
-                                                }
-                                            };
-
-                                            var body = "";
-                                            var responseObject;
-
-                                            var post_req = https.request(newoptions, function(response) {
-                                                response.on('data', function(chunk) {
-                                                    body += chunk;
-                                                });
-
-                                                response.on('end', function() {
-                                                    console.log( "Body : " + body);
-                                                    speech = "Done : ";
-                                                    return res.json({
-                                                        speech: speech,
-                                                        displayText: speech
-                                                    })
-                                                })
-                                            }).on('error', function(e) {
-                                                speech = "Error occured! : " + e;
-                                                return res.json({
-                                                    speech: speech,
-                                                    displayText: speech
-                                                })
-                                            });
-                                            //post_req.write();
-                                            //post_req.write(tracker);
-                                            post_req.end();
+                return res.json({
+                    speech: speech,
+                    displayText: speech,
+                    "buttons": [
+                      {
+                        "title": "View",
+                        "type": "web_url",
+                        "url": "https://vikii.herokuapp.com/login?id="
+                      }
+                    ]
+                });
             }
             else if( rowCount == 1 ){
                     
