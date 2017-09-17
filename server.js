@@ -110,7 +110,7 @@ restService.post('/inputmsg', function(req, res) {
                 return res.json({
 //                    speech: speech,
 //                    displayText: speech,
-                    date : {
+                    data : {
                       "google": {
                           "expect_user_response": false,
                           "rich_response": {
