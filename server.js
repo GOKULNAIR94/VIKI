@@ -107,38 +107,47 @@ restService.post('/inputmsg', function(req, res) {
         GetAuth( req, res, function( req, res, rowCount ){
             if ( rowCount == 0 ) {
                 speech = "Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! \nPlease Login @ https://vikii.herokuapp.com/login?id=" + userid;
-                
-                return res.json({
-                    speech: speech,
-                    displayText: speech,
-                    data : {
-                        google: {
-                            'expectUserResponse': true,
-                            'isSsml': false,
-                            'noInputPrompts': [],
-                            'richResponse': {
-                                'items': [{
-                                        'simpleResponse': {
-                                            'textToSpeech': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! Please click the below button to Login!',
-                                            'displayText': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!'
+                var returnJson;
+                if (req.body.originalRequest.source == "google") {
+                    returnJson = {
+                        speech: speech,
+                        displayText: speech,
+                        data : {
+                            google: {
+                                'expectUserResponse': true,
+                                'isSsml': false,
+                                'noInputPrompts': [],
+                                'richResponse': {
+                                    'items': [{
+                                            'simpleResponse': {
+                                                'textToSpeech': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! Please click the below button to Login!',
+                                                'displayText': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!'
+                                            }
+                                        },
+                                        {
+                                            'basicCard': {
+                                                'title': 'VIKI',
+                                                'buttons': [{
+                                                    'title': 'Login to Viki',
+                                                    'openUrlAction': {
+                                                        'url': "https://vikii.herokuapp.com/login?id=" + userid
+                                                    }
+                                                }]
+                                            }
                                         }
-                                    },
-                                    {
-                                        'basicCard': {
-                                            'title': 'VIKI',
-                                            'buttons': [{
-                                                'title': 'Login to Viki',
-                                                'openUrlAction': {
-                                                    'url': "https://vikii.herokuapp.com/login?id=" + userid
-                                                }
-                                            }]
-                                        }
-                                    }
-                                ]
+                                    ]
+                                }
                             }
                         }
                     }
-                });
+                }
+                else{
+                    returnJson = {
+                        speech: speech,
+                        displayText: speech
+                    }
+                }
+                return res.json(returnJson);
             }
             else if( rowCount == 1 ){
                     
