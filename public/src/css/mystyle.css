@@ -81,7 +81,7 @@ body {
 
 footer{
     width: 100%;
-    margin-top: 50px ;
+    margin-top: 20px ;
 }
 
 .loader {
@@ -126,7 +126,9 @@ body{
     background-color: rgba(255,255,255,0.4);
 /*    min-height: 350px;*/
 }
-
+.SubmitButton{
+    margin-top: 30px
+}
 .ghostButton {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     border: 1px solid #187da5;
@@ -142,7 +144,8 @@ body{
 
     .ghostButton:hover {
         cursor: pointer;
-        background-color: rgba(42,136,173,1);
+        color: #135f7c;
+        background-color: rgba(255,255,255,1);
         color: white;
         border-radius: 6px;
     }
