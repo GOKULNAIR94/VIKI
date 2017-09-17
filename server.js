@@ -111,38 +111,25 @@ restService.post('/inputmsg', function(req, res) {
                     speech: speech,
                     displayText: speech,
                     date : {
-                        google: {
-                            'expectUserResponse': true,
-                            'isSsml': true,
-                            'noInputPrompts': [],
-                            "permissions_request": {
-                                "opt_context": "",
-                                "permissions": [
-                                  "NAME",
-                                  "DEVICE_COARSE_LOCATION",
-                                  "DEVICE_PRECISE_LOCATION"
-                                ]
+                      "google": {
+                          "expect_user_response": false,
+                          "rich_response": {
+                            "items": [
+                              {
+                               "simple_response": {
+                                  "text_to_speech": "This might be the first response"
+                                }
                               },
-                            'richResponse': {
-                                'items': [{
-                                        'simpleResponse': {
-                                            'textToSpeech': 'Please Login here:',
-                                            'displayText': 'This is a simple display text response for Action on Google.'
-                                        }
-                                    },
-                                    {
-                                        'basicCard': {
-                                            'title': 'Title: this is a title',
-                                            'buttons': [{
-                                                'title': 'This is a button',
-                                                'openUrlAction': {
-                                                    'url': 'https://assistant.google.com/'
-                                                }
-                                            }]
-                                        }
-                                    }
-                                ]
-                            }
+                              {
+                                "basic_card": {
+                                  "image": {
+                                    "url": "http://rathankalluri.com/tr-in/agents/tr-1024.jpg",
+                                    "accessibility_text": "Travel India text"
+                                  }
+                                }
+                              }
+                            ]
+                          }
                         }
                     }
                 });
