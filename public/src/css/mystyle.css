@@ -118,6 +118,9 @@ body{
   background-size: cover;
   position: relative;
 }
+.vikiHead{
+    margin-top: 40px;
+}
 
 .container{
     border-color: black;
