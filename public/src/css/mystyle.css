@@ -110,9 +110,9 @@ body, html {
     margin: 0;
 }
 body{
-    margin-top: 8%;
+    background-size: 100% 110%;
   background-image: url("hero.jpg");
-  height: 50%;
+  
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -120,6 +120,7 @@ body{
 }
 
 .container{
+    margin-top: 8%;
     border-color: black;
     border-width: 1px 0px;
     border-style: solid;
