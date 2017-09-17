@@ -118,17 +118,17 @@ restService.post('/inputmsg', function(req, res) {
                             'richResponse': {
                                 'items': [{
                                         'simpleResponse': {
-                                            'textToSpeech': 'Please Login here:',
-                                            'displayText': 'This is a simple display text response for Action on Google.'
+                                            'textToSpeech': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!',
+                                            'displayText': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!'
                                         }
                                     },
                                     {
                                         'basicCard': {
-                                            'title': 'Title: this is a title',
+                                            'title': 'VIKI',
                                             'buttons': [{
-                                                'title': 'This is a button',
+                                                'title': 'Login to Viki',
                                                 'openUrlAction': {
-                                                    'url': 'https://assistant.google.com/'
+                                                    'url': "https://vikii.herokuapp.com/login?id=" + userid
                                                 }
                                             }]
                                         }
