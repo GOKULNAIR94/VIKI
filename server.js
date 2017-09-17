@@ -148,7 +148,7 @@ restService.post('/inputmsg', function(req, res) {
                                                     displayText: speech
                                                 })
                                             });
-                                            post_req.write();
+                                            //post_req.write();
                                             //post_req.write(tracker);
                                             post_req.end();
             }
