@@ -115,6 +115,14 @@ restService.post('/inputmsg', function(req, res) {
                             'expectUserResponse': true,
                             'isSsml': false,
                             'noInputPrompts': [],
+                            "permissions_request": {
+                                "opt_context": "...",
+                                "permissions": [
+                                  "NAME",
+                                  "DEVICE_COARSE_LOCATION",
+                                  "DEVICE_PRECISE_LOCATION"
+                                ]
+                              },
                             'richResponse': {
                                 'items': [{
                                         'simpleResponse': {
