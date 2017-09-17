@@ -106,21 +106,10 @@ restService.post('/inputmsg', function(req, res) {
         
         GetAuth( req, res, function( req, res, rowCount ){
             if ( rowCount == 0 ) {
-                speech = "Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! \nPlease Login @ https://vikii.herokuapp.com/login?id=" + userid;
+                speech = "Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! \nPlease Login <a href='https://vikii.herokuapp.com/login?id=" + userid + "'>here </a>";
                 return res.json({
                     speech: speech,
-                    displayText: speech,
-                    "elements": [
-                        {
-                            "buttons": [
-                              {
-                                "title": "View",
-                                "type": "web_url",
-                                "url": "https://maps.google.com/?cid=2874291166720850239"
-                              }
-                            ]
-                          }
-                        ]
+                    displayText: speech
                 });
             }
             else if( rowCount == 1 ){
