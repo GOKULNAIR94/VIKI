@@ -1,6 +1,24 @@
 
+/* Custom page header */
+.header {
+  padding-bottom: 1rem;
+  border-bottom: .05rem solid #e5e5e5;
+}
 
+/* Custom page footer */
+.footer {
+  padding-top: 1.5rem;
+  color: #777;
+  border-top: .05rem solid #e5e5e5;
+}
 
+/* Main marketing message and sign up button */
+/*
+.jumbotron {
+  text-align: center;
+  border-bottom: .05rem solid #e5e5e5;
+*/
+/*}*/
 footer{
     width: 100%;
     margin-top: 20px ;
