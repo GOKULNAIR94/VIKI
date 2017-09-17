@@ -147,3 +147,9 @@ body{
         
         border-radius: 6px;
     }
+
+
+input[type=text], input[type=password] {
+    max-width:400px;
+	width: 80%;
+}
