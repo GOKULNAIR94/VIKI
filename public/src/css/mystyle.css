@@ -105,6 +105,19 @@ footer{
   100% { transform: rotate(360deg); }
 }
 
+body, html {
+    height: 100%;
+    margin: 0;
+}
+body{
+  background-image: url("photographer.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
 .container{
     border-color: black;
     border-width: 1px 0px;
