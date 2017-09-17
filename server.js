@@ -109,8 +109,8 @@ restService.post('/inputmsg', function(req, res) {
                 speech = "Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! \nPlease Login @ https://vikii.herokuapp.com/login?id=" + userid;
                 return res.json({
                     speech: speech,
-                    displayText: speech
-                    'google': {
+                    displayText: speech,
+                    google: {
                         'expectUserResponse': true,
                         'isSsml': false,
                         'noInputPrompts': [],
