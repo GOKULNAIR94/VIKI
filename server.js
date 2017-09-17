@@ -111,25 +111,30 @@ restService.post('/inputmsg', function(req, res) {
 //                    speech: speech,
 //                    displayText: speech,
                     data : {
-                      "google": {
-                          "expect_user_response": false,
-                          "rich_response": {
-                            "items": [
-                              {
-                               "simple_response": {
-                                  "text_to_speech": "This might be the first response"
-                                }
-                              },
-                              {
-                                "basic_card": {
-                                  "image": {
-                                    "url": "http://rathankalluri.com/tr-in/agents/tr-1024.jpg",
-                                    "accessibility_text": "Travel India text"
-                                  }
-                                }
-                              }
-                            ]
-                          }
+                        google: {
+                            'expectUserResponse': true,
+                            'isSsml': false,
+                            'noInputPrompts': [],
+                            'richResponse': {
+                                'items': [{
+                                        'simpleResponse': {
+                                            'textToSpeech': 'Please Login here:',
+                                            'displayText': 'This is a simple display text response for Action on Google.'
+                                        }
+                                    },
+                                    {
+                                        'basicCard': {
+                                            'title': 'Title: this is a title',
+                                            'buttons': [{
+                                                'title': 'This is a button',
+                                                'openUrlAction': {
+                                                    'url': 'https://assistant.google.com/'
+                                                }
+                                            }]
+                                        }
+                                    }
+                                ]
+                            }
                         }
                     }
                 });
