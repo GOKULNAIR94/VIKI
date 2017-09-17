@@ -117,7 +117,7 @@ restService.post('/inputmsg', function(req, res) {
                         'richResponse': {
                             'items': [{
                                     'simpleResponse': {
-                                        'textToSpeech': 'Please Login here:',
+                                        'textToSpeech': 'Please Login here:'
                                     }
                                 },
                                 {
