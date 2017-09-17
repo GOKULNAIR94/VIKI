@@ -113,37 +113,3 @@ footer{
     min-height: 350px;
 }
 
-html {
-    background: url('hero.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-
-input[type=text], input[type=password] {
-    padding: 8px;
-    border: 2px solid #fff;
-    border-radius: 6px;
-    box-shadow: inset 0px 1px 1px;
-}
-
-.ghostButton {
-    border: 1px solid #187da5;
-    background-color: rgba(42,136,73,0);
-    color: #135f7c;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: 0.5s;
-    font-weight: bold;
-    border-radius: 6px;
-    font: bold 20px 'Bitter', serif;
-}
-
-    .ghostButton:hover {
-        cursor: pointer;
-        background-color: rgba(42,136,173,1);
-        color: white;
-        border-radius: 6px;
-    }
