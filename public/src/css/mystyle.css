@@ -46,6 +46,7 @@ footer{
 }
 
 body, html {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     height: 100%;
     margin: 0;
 }
@@ -69,7 +70,7 @@ body{
 }
 
 .ghostButton {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    
     border: 1px solid #187da5;
     background-color: rgba(42,136,73,0);
     color: #135f7c;
