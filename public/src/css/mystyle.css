@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -17,8 +18,7 @@ h1 {
 }
 
 .login-form {
-  width: 450px;
-    min-height: 
+  width: 350px;
   padding: 40px 30px;
   background: #eee;
   -moz-border-radius: 4px;
