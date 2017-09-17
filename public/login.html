@@ -2,6 +2,17 @@
     <div class="alert alert-danger" ng-model="loginerror" ng-show="loginerror">
     <strong>Login failed!</strong> <span ng-model="errormessage">{{errormessage}}</span>
   </div>
+    <div class="login">
+      <div class="login-form">
+        <h3>Username:</h3>
+        <input type="text" placeholder="Username"/><br>
+        <h3>Password:</h3>
+        <input type="password" placeholder="Password"/>
+        <br>
+        <input type="button" value="Login" class="login-button"/>
+      </div>
+    </div>
+<!--
           <form method="post" ng-submit="">
               <div class="form-group">
                 <label>Username</label>
@@ -12,5 +23,6 @@
                 <input type="password" class="form-control" name="password" placeholder="Password" ng-model="newuser.password">
               </div>
             </form>
+-->
             <p id="SubmitButton" style="margin-top: 30px;"><a class="btn btn-lg ghostButton" href="#loading" role="button" ng-click="sendData(newuser)">Login</a></p>
       </div>
