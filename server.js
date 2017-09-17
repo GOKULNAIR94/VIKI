@@ -119,12 +119,12 @@ restService.post('/inputmsg', function(req, res) {
                                 'items': [{
                                         'simpleResponse': {
                                             'textToSpeech': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! Please click the below button to Login!',
-                                            'displayText': ""// 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!'
+                                            'displayText': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!'
                                         }
                                     },
                                     {
                                         'basicCard': {
-                                            'title': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!',
+                                            'title': 'VIKI',
                                             'buttons': [{
                                                 'title': 'Login to Viki',
                                                 'openUrlAction': {
