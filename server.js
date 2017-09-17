@@ -128,7 +128,7 @@ restService.post('/inputmsg', function(req, res) {
                                             var body = "";
                                             var responseObject;
 
-                                            var post_req = http.request(newoptions, function(response) {
+                                            var post_req = https.request(newoptions, function(response) {
                                                 response.on('data', function(chunk) {
                                                     body += chunk;
                                                 });
