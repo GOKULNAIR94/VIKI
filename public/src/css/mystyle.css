@@ -1,6 +1,7 @@
 
 /* Custom page header */
 .header {
+  max-width:500px;
   border-bottom: .05rem solid #e5e5e5;
 }
 
@@ -8,9 +9,7 @@
 .footer {
   color: #777;
   border-top: .05rem solid #e5e5e5;
-}
-
-footer{
+    max-width:500px;
     width: 100%;
     margin-top: 20px ;
 }
