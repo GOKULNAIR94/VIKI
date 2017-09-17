@@ -118,7 +118,7 @@ restService.post('/inputmsg', function(req, res) {
                             'richResponse': {
                                 'items': [{
                                         'simpleResponse': {
-                                            'textToSpeech': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!',
+                                            'textToSpeech': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! Please Login!',
                                             'displayText': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!'
                                         }
                                     },
