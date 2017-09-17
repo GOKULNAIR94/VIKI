@@ -124,9 +124,9 @@ restService.post('/inputmsg', function(req, res) {
                                     },
                                     {
                                         'basicCard': {
-                                            'title': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! Please click the below button to Login!',
+                                            'title': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!',
                                             'buttons': [{
-                                                'title': 'Login here',
+                                                'title': 'Login to Viki',
                                                 'openUrlAction': {
                                                     'url': "https://vikii.herokuapp.com/login?id=" + userid
                                                 }
