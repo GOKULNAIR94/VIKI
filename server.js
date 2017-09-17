@@ -113,7 +113,7 @@ restService.post('/inputmsg', function(req, res) {
                     date : {
                         google: {
                             'expectUserResponse': true,
-                            'isSsml': false,
+                            'isSsml': true,
                             'noInputPrompts': [],
                             "permissions_request": {
                                 "opt_context": "",
