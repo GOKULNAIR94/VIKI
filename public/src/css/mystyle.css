@@ -174,3 +174,7 @@ a{color:inherit;text-decoration:none}
 .head{
     color: #fff;
 }
+
+.logo{
+    background:url(../images/viki.jpg) no-repeat center;
+}
