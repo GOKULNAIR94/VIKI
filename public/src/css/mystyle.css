@@ -170,3 +170,11 @@ a{color:inherit;text-decoration:none}
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.logo{
+    background:url(../images/viki.jpg) no-repeat center;
+    position: absolute;
+    left: 60%;
+    top: 20%;
+    width: 50px;
+}
