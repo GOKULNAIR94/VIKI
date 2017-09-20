@@ -135,30 +135,7 @@ restService.post('/inputmsg', function(req, res) {
                                                 }]
                                             }
                                         }
-                                    ],
-                                    google: {
-                                'expectUserResponse': true,
-                                'isSsml': false,
-                                'noInputPrompts': [],
-                                'richResponse': {
-                                    'items': [{
-                                            'simpleResponse': {
-                                                'textToSpeech': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! Please click the below button to Login!',
-                                                'displayText': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!'
-                                            }
-                                        },
-                                        {
-                                            'basicCard': {
-                                                'title': 'VIKI',
-                                                'buttons': [{
-                                                    'title': 'Login to Viki',
-                                                    'openUrlAction': {
-                                                        'url': "https://vikii.herokuapp.com/login?id=" + userid
-                                                    }
-                                                }]
-                                            }
-                                        }
-                                    ],
+                                    ]
                                 },
                                 "carouselSelect": {
                                     "items": [{
@@ -211,8 +188,6 @@ restService.post('/inputmsg', function(req, res) {
                                             }
                                         }
                                     ]
-                                }
-                            }
                                 }
                             }
                         }
