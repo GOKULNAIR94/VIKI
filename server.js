@@ -149,7 +149,11 @@ restService.post('/inputmsg', function(req, res) {
                                         {
                                             "title": "Suggestions"
                                         }
-                                    ]
+                                    ],
+                                    "linkOutSuggestion": {
+                                        "destinationName": "Suggestion Link",
+                                        "url": "https://assistant.google.com/"
+                                    }
                                 }
                             }
                         }
