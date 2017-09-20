@@ -128,6 +128,17 @@ restService.post('/inputmsg', function(req, res) {
                                             'basicCard': {
                                                 'title': 'VIKI',
                                                 'buttons': [{
+                                                    'title': 'Login to Viki 1 ',
+                                                    'openUrlAction': {
+                                                        'url': "https://vikii.herokuapp.com/login?id=" + userid
+                                                    }
+                                                }]
+                                            }
+                                        },
+                                        {
+                                            'basicCard': {
+                                                'title': 'VIKI 2 ',
+                                                'buttons': [{
                                                     'title': 'Login to Viki',
                                                     'openUrlAction': {
                                                         'url': "https://vikii.herokuapp.com/login?id=" + userid
