@@ -150,7 +150,7 @@ restService.post('/inputmsg', function(req, res) {
                                                 'textToSpeech': '123123123! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! Please click the below button to Login!',
                                                 'displayText': '123123! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!'
                                             }
-                                        },
+                                        }
                                     ]
                                 }
                             }
