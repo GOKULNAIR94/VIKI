@@ -135,9 +135,8 @@ restService.post('/inputmsg', function(req, res) {
                                                 }]
                                             }
                                         }
-                                    ]
-                                },
-                                "carouselSelect": {
+                                    ],
+                                    "carouselSelect": {
                                     "items": [{
                                             "optionInfo": {
                                                 "key": "MATH_AND_PRIME",
@@ -188,6 +187,7 @@ restService.post('/inputmsg', function(req, res) {
                                             }
                                         }
                                     ]
+                                }
                                 }
                             }
                         }
