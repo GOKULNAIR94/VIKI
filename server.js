@@ -134,6 +134,17 @@ restService.post('/inputmsg', function(req, res) {
                                                     }
                                                 }]
                                             }
+                                        },
+                                        {
+                                            'basicCard': {
+                                                'title': 'VIKI 2',
+                                                'buttons': [{
+                                                    'title': 'Login to Viki 2',
+                                                    'openUrlAction': {
+                                                        'url': "https://vikii.herokuapp.com/login?id=" + userid
+                                                    }
+                                                }]
+                                            }
                                         }
                                     ]
                                 }
