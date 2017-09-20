@@ -126,30 +126,20 @@ restService.post('/inputmsg', function(req, res) {
                                         },
                                         {
                                             'basicCard': {
-                                                'title': 'VIKI 5',
+                                                'title': 'VIKI',
                                                 'buttons': [{
-                                                    'title': 'Login to Viki',
+                                                    'title': 'Login to Viki 1',
                                                     'openUrlAction': {
                                                         'url': "https://vikii.herokuapp.com/login?id=" + userid
                                                     }
-                                                }]
-                                            }
-                                        },
-                                        {
-                                            'basicCard': {
-                                                'title': 'VIKI 2',
-                                                'buttons': [{
+                                                },
+                                                {
                                                     'title': 'Login to Viki 2',
                                                     'openUrlAction': {
                                                         'url': "https://vikii.herokuapp.com/login?id=" + userid
                                                     }
-                                                }]
-                                            }
-                                        },
-                                        {
-                                            'simpleResponse': {
-                                                'textToSpeech': '123123123! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! Please click the below button to Login!',
-                                                'displayText': '123123! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!'
+                                                }
+                                                ]
                                             }
                                         }
                                     ]
