@@ -135,7 +135,7 @@ restService.post('/inputmsg', function(req, res) {
                                                 }]
                                             }
                                         }
-                                    ],
+                                    ]
                                 },
                                 "carouselSelect": {
                                     "items": [{
