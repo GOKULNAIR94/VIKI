@@ -150,8 +150,6 @@ restService.post('/inputmsg', function(req, res) {
                                             "title": "Math & prime numbers",
                                             "description": "42 is an abundant number because the sum of its proper divisors 54 is greater…",
                                             "image": {
-                                                "url": "http://example.com/math_and_prime.jpg",
-                                                "accessibilityText": "Math & prime numbers"
                                             }
                                         },
                                         {
@@ -166,8 +164,6 @@ restService.post('/inputmsg', function(req, res) {
                                             "title": "Ancient Egyptian religion",
                                             "description": "42 gods who ruled on the fate of the dead in the afterworld. Throughout the under…",
                                             "image": {
-                                                "url": "http://example.com/egypt",
-                                                "accessibilityText": "Egypt"
                                             }
                                         },
                                         {
@@ -182,8 +178,6 @@ restService.post('/inputmsg', function(req, res) {
                                             "title": "42 recipes with 42 ingredients",
                                             "description": "Here's a beautifully simple recipe that's full of flavor! All you need is some ginger and…",
                                             "image": {
-                                                "url": "http://example.com/recipe",
-                                                "accessibilityText": "Recipe"
                                             }
                                         }
                                     ]
