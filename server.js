@@ -135,6 +135,20 @@ restService.post('/inputmsg', function(req, res) {
                                                 }]
                                             }
                                         }
+                                    ],
+                                    "suggestions": [
+                                        {
+                                            "title": "Basic Card"
+                                        },
+                                        {
+                                            "title": "List"
+                                        },
+                                        {
+                                            "title": "Carousel"
+                                        },
+                                        {
+                                            "title": "Suggestions"
+                                        }
                                     ]
                                 }
                             }
