@@ -13,7 +13,7 @@ module.exports = function( req, res ) {
     var speech = "";    
     if( intentName == "Default Welcome Intent")
     {
-      speech = "Hi Kaaman! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!";
+      speech = "Hi Kaaman! How can i help?";
         return res.json({
           speech: speech,
           displayText: speech
