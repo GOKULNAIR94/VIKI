@@ -84,21 +84,19 @@ module.exports = function( req, res ) {
                 else
                     speech = responseObject.speech.speech;
                 
-                console.log( "responseObject : " + JSON.stringify(responseObject) );
-				
+                console.log( "responseObject.speech : " + responseObject.speech );
+
 				if (req.body.originalRequest.source == "google") {
-					console.log(" Google responseObject");
-					res.json({responseObject});
+					return res.json({speech});
 				}
 				else{
-					res.json({
+					return res.json({
 					  speech: speech,
 					  displayText: speech
 					})
+
 				}
-                
-				
-				  }
+              }
               catch(e){
                 speech = "Error occured!";
                 return res.json({

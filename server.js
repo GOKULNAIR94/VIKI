@@ -135,16 +135,7 @@ restService.post('/inputmsg', function(req, res) {
                                                 }]
                                             }
                                         }
-                                    ],
-									 "suggestions": [{
-										 "title": "16027"
-									 }, {
-										 "title": "16021"
-									 }, {
-										 "title": "16023"
-									 }, {
-										 "title": "16022"
-									 }]
+                                    ]
                                 }
                             }
                         }
@@ -162,7 +153,6 @@ restService.post('/inputmsg', function(req, res) {
                     
                     Index( req, res, function( result ) {
                         console.log("Index Called");
-						res.json({result});
                     });
                 }
         });
