@@ -162,6 +162,7 @@ restService.post('/inputmsg', function(req, res) {
                     
                     Index( req, res, function( result ) {
                         console.log("Index Called");
+						res.json({result});
                     });
                 }
         });
