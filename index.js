@@ -78,20 +78,12 @@ module.exports = function( req, res ) {
               console.log( "Body : " + body );
               try
               {
-                responseObject = JSON.parse(body);
-                if( typeof responseObject.speech != "object")
-                    speech = responseObject.speech;
-                else
-                    speech = responseObject.speech.speech;
-                
-                console.log( "responseObject.speech : " + responseObject.speech );
-                  return res.json({
-                  speech: speech,
-                  displayText: speech
-                })
+                  responseObject = JSON.parse(body);
+                  console.log( "responseObject.speech : " + responseObject );
+                  return res.json(responseObject);
               }
               catch(e){
-                speech = "Error occured!";
+                speech = "Something went wrong! Please try again later!";
                 return res.json({
                   speech: speech,
                   displayText: speech
@@ -99,7 +91,7 @@ module.exports = function( req, res ) {
               }
           })
         }).on('error', function(e){
-          speech = "Error occured!";
+          speech = "Something went wrong! Please try again later!";
             return res.json({
               speech: speech,
               displayText: speech

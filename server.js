@@ -147,7 +147,7 @@ restService.post('/inputmsg', function(req, res) {
                         displayText: speech
                     }
                 }
-                return res.json(returnJson);
+                return (returnJson);
             }
             else if( rowCount == 1 ){
                     
