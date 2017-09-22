@@ -79,12 +79,11 @@ module.exports = function( req, res ) {
               try
               {
                   responseObject = JSON.parse(body);
-                  console.log( "responseObject.speech : " + responseObject );
-                  return res.json(responseObject);
+                  res.json(responseObject);
               }
               catch(e){
                 speech = "Something went wrong! Please try again later!";
-                return res.json({
+                res.json({
                   speech: speech,
                   displayText: speech
                 })
@@ -92,7 +91,7 @@ module.exports = function( req, res ) {
           })
         }).on('error', function(e){
           speech = "Something went wrong! Please try again later!";
-            return res.json({
+            res.json({
               speech: speech,
               displayText: speech
             })

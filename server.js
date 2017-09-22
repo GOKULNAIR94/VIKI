@@ -152,7 +152,7 @@ restService.post('/inputmsg', function(req, res) {
             else if( rowCount == 1 ){
                     
                     Index( req, res, function( result ) {
-                        console.log("Index Called");
+                        console.log("Index Called : " + JSON.stringify(result));
                     });
                 }
         });
