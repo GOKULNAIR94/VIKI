@@ -127,10 +127,10 @@ restService.post('/inputmsg', function(req, res) {
                                         },
                                         {
                                             'basicCard': {
-                                                'title': 'VIKI',
+                                                'title': '',
                                                 "image": {
-                                                    "url": __dirname + "/public/src/images/viki.jpg",
-                                                    "accessibilityText": "Image alternate text"
+                                                    "url": "",
+                                                    "accessibilityText": ""
                                                 },
                                                 'buttons': [{
                                                     'title': 'Login to Viki',
