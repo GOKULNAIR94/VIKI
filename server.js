@@ -128,7 +128,7 @@ restService.post('/inputmsg', function(req, res) {
                                             'basicCard': {
                                                 'title': 'VIKI',
                                                 "image": {
-                                                    "url": "https://image.flaticon.com/teams/slug/freepik.jpg",
+                                                    "url": "./public/src/images/viki.jpg",
                                                     "accessibilityText": "Image alternate text"
                                                 },
                                                 'buttons': [{
