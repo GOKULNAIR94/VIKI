@@ -105,6 +105,7 @@ restService.post('/inputmsg', function(req, res) {
 		}
         
         GetAuth( req, res, function( req, res, rowCount ){
+            console.log(__dirname + "/public/src/images/viki.jpg");
             if ( rowCount == 0 ) {
                 speech = "Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! \nPlease Login @ https://vikii.herokuapp.com/login?id=" + userid;
                 var returnJson;
