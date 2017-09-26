@@ -130,7 +130,7 @@ restService.post('/inputmsg', function(req, res) {
                                                 "items" : [{
                                                     "optionInfo" : {
                                                         "key" : "Gokul",
-                                                        "synonyms" : []
+                                                        "synonyms" : [ "g","ggn"]
                                                     },
                                                     "title" : "G Title",
                                                     "description" : "description",
