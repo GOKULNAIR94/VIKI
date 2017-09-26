@@ -111,8 +111,8 @@ restService.post('/inputmsg', function(req, res) {
                 var returnJson;
                 if (req.body.originalRequest.source == "google") {
                     returnJson = {
-                        speech: speech,
-                        displayText: speech,
+//                        speech: speech,
+//                        displayText: speech,
                         data : {
                             google: {
                                 "conversationToken": "{\"state\":null,\"data\":{}}",
