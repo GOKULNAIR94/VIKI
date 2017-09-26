@@ -113,8 +113,8 @@ restService.post('/inputmsg', function(req, res) {
                     returnJson = {
 //                        speech: speech,
 //                        displayText: speech,
-                        data : {
-                            google: {
+                        
+                            
                                 "conversationToken": "{\"state\":null,\"data\":{}}",
                                 "expectUserResponse": true,
                                 "expectedInputs": [{
@@ -160,8 +160,8 @@ restService.post('/inputmsg', function(req, res) {
 //                                        }
 //                                    ]
 //                                }
-                            }
-                        }
+                            
+                        
                     }
                 }
                 else{
