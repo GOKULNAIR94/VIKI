@@ -116,7 +116,7 @@ restService.post('/inputmsg', function(req, res) {
                         data : {
                             google: {
                                 'expectUserResponse': true,
-                                'isSsml': false,
+//                                'isSsml': false,
                                 'richResponse': {
                                     'items': [{
                                             'simpleResponse': {
