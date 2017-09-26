@@ -46,10 +46,10 @@ module.exports = function( req, res ) {
             varPath = '/report';
         }
         
-        if( intentName == 'oppty' || intentName=='oppty - next' || intentName=='oppty - custom' || intentName=='oppty - News' || intentName=='Activities - Sales'  ){
+        if( intentName == 'oppty' || intentName=='oppty - next' || intentName=='oppty - custom' || intentName=='oppty - News' || intentName.indexOf( "Activities - Sales" ) == 0 ){
             //varHost = 'polar-sea-99105.herokuapp.com';
             varHost = 'opty.herokuapp.com';
-      varPath = '/oppty';
+            varPath = '/oppty';
         }
         console.log( "varHost : " + varHost );
         console.log( "varPath : " + varPath);
