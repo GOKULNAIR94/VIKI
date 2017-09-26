@@ -117,31 +117,53 @@ restService.post('/inputmsg', function(req, res) {
                             google: {
                                 'expectUserResponse': true,
                                 'isSsml': false,
-                                'noInputPrompts': [],
                                 'richResponse': {
                                     'items': [{
                                             'simpleResponse': {
                                                 'textToSpeech': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! Please click the below button to Login!',
                                                 'displayText': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!'
                                             }
-                                        },
-                                        {
-                                            'basicCard': {
-                                                'title': '',
-                                                "image": {
-                                                    "url": "",
-                                                    "accessibilityText": ""
-                                                },
-                                                'buttons': [{
-                                                    'title': 'Login to Viki',
-                                                    'openUrlAction': {
-                                                        'url': "https://vikii.herokuapp.com/login?id=" + userid
+                                        }
+//                                              ,
+//                                        {
+//                                            'basicCard': {
+//                                                'title': '',
+//                                                "image": {
+//                                                    "url": "",
+//                                                    "accessibilityText": ""
+//                                                },
+//                                                'buttons': [{
+//                                                    'title': 'Login to Viki',
+//                                                    'openUrlAction': {
+//                                                        'url': "https://vikii.herokuapp.com/login?id=" + userid
+//                                                    }
+//                                                }]
+//                                            }
+//                                        }
+                                    ]
+                                },
+                                "expectedInputs": [{
+                                    "possibleIntents": [{
+                                        "intent": "actions.intent.OPTION",
+                                        "inputValueData" : {
+                                            "@type" : "type.googleapis.com/google.actions.v2.OptionValueSpec",
+                                            "carouselSelect" : {
+                                                "items" : [{
+                                                    "optionInfo" : {
+                                                        "key" : "Gokul",
+                                                        "synonyms" : [ "g","ggn"]
+                                                    },
+                                                    "title" : "G Title",
+                                                    "description" : "description",
+                                                    "image" : {
+                                                        "url" : "https://image.flaticon.com/teams/slug/freepik.jpg",
+                                                        "accessibilityText" : "accessibilityText"
                                                     }
                                                 }]
                                             }
                                         }
-                                    ]
-                                }
+                                    }]
+                                }]
                             }
                         }
                     }
