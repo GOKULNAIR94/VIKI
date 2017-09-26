@@ -115,33 +115,51 @@ restService.post('/inputmsg', function(req, res) {
                         displayText: speech,
                         data : {
                             google: {
-                                'expectUserResponse': true,
-                                'isSsml': false,
-                                'noInputPrompts': [],
-                                'richResponse': {
-                                    'items': [{
-                                            'simpleResponse': {
-                                                'textToSpeech': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! Please click the below button to Login!',
-                                                'displayText': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!'
-                                            }
-                                        },
-                                        {
-                                            'basicCard': {
-                                                'title': '',
-                                                "image": {
-                                                    "url": "",
-                                                    "accessibilityText": ""
-                                                },
-                                                'buttons': [{
-                                                    'title': 'Login to Viki',
-                                                    'openUrlAction': {
-                                                        'url': "https://vikii.herokuapp.com/login?id=" + userid
-                                                    }
-                                                }]
-                                            }
+                                "conversationToken": "{\"state\":null,\"data\":{}}",
+                                "expectUserResponse": true,
+                                "expectedInputs": [{
+                                    "inputPrompt": {
+                                        "richInitialPrompt": {
+                                            "items": [{
+                                                "simpleResponse": {
+                                                    "textToSpeech": "Howdy! I can tell you fun facts about almost any number, like 42. What do you have in mind?",
+                                                    "displayText": "Howdy! I can tell you fun facts about almost any number. What do you have in mind?"
+                                                }
+                                            }],
+                                            "suggestions": []
                                         }
-                                    ]
-                                }
+                                    },
+                                    "possibleIntents": [{
+                                        "intent": "actions.intent.TEXT"
+                                    }]
+                                }]
+//                                'expectUserResponse': true,
+//                                'isSsml': false,
+//                                'noInputPrompts': [],
+//                                'richResponse': {
+//                                    'items': [{
+//                                            'simpleResponse': {
+//                                                'textToSpeech': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! Please click the below button to Login!',
+//                                                'displayText': 'Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!'
+//                                            }
+//                                        },
+//                                        {
+//                                            'basicCard': {
+//                                                'title': '',
+//                                                "image": {
+//                                                    "url": "",
+//                                                    "accessibilityText": ""
+//                                                },
+//                                                'buttons': [{
+//                                                    'title': 'Login to Viki',
+//                                                    'openUrlAction': {
+//                                                        'url': "https://vikii.herokuapp.com/login?id=" + userid
+//                                                    }
+//                                                }]
+//                                            }
+//                                        }
+//                                    ]
+//                                }
                             }
                         }
                     }
