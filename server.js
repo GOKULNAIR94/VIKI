@@ -142,8 +142,7 @@ restService.post('/inputmsg', function(req, res) {
 //                                        }
                                     ]
                                 },
-                                "expectedInputs": [{
-                                    "possibleIntents": [{
+                                "systemIntent" : {
                                         "intent": "actions.intent.OPTION",
                                         "inputValueData" : {
                                             "@type" : "type.googleapis.com/google.actions.v2.OptionValueSpec",
@@ -162,8 +161,7 @@ restService.post('/inputmsg', function(req, res) {
                                                 }]
                                             }
                                         }
-                                    }]
-                                }]
+                                }
                             }
                         }
                     }
