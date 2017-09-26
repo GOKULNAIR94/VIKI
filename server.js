@@ -115,7 +115,7 @@ restService.post('/inputmsg', function(req, res) {
 //                        displayText: speech,
                         
                             
-                                "conversationToken": "{\"state\":null,\"data\":{}}",
+                                
                                 "expectUserResponse": true,
                                 "expectedInputs": [{
                                     "inputPrompt": {
