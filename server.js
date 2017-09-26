@@ -111,8 +111,7 @@ restService.post('/inputmsg', function(req, res) {
                 var returnJson;
                 if (req.body.originalRequest.source == "google") {
                     returnJson = {
-                        {
-    "speech": "This is a simple response for a carousel",
+                        "speech": "This is a simple response for a carousel",
     "data": {
         "google": {
             "expectUserResponse": true,
@@ -208,7 +207,6 @@ restService.post('/inputmsg', function(req, res) {
             }
         }
     }
-}
                     }
                 }
                 else{
