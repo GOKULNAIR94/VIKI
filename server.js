@@ -126,20 +126,37 @@ restService.post('/inputmsg', function(req, res) {
                                             }
                                         },
                                         {
-                                            'basicCard': {
-                                                'title': '',
-                                                "image": {
-                                                    "url": "",
-                                                    "accessibilityText": ""
-                                                },
-                                                'buttons': [{
-                                                    'title': 'Login to Viki',
-                                                    'openUrlAction': {
-                                                        'url': "https://vikii.herokuapp.com/login?id=" + userid
+                                            'carouselSelect': {
+                                                "items" : [{
+                                                    "optionInfo" : {
+                                                        "key" : "Gokul",
+                                                        "synonyms" : []
+                                                    },
+                                                    "title" : "G Title",
+                                                    "description" : "description",
+                                                    "image" : {
+                                                        "url" : "https://image.flaticon.com/teams/slug/freepik.jpg",
+                                                        "accessibilityText" : "accessibilityText"
                                                     }
                                                 }]
                                             }
                                         }
+//                                              ,
+//                                        {
+//                                            'basicCard': {
+//                                                'title': '',
+//                                                "image": {
+//                                                    "url": "",
+//                                                    "accessibilityText": ""
+//                                                },
+//                                                'buttons': [{
+//                                                    'title': 'Login to Viki',
+//                                                    'openUrlAction': {
+//                                                        'url': "https://vikii.herokuapp.com/login?id=" + userid
+//                                                    }
+//                                                }]
+//                                            }
+//                                        }
                                     ]
                                 }
                             }
