@@ -154,7 +154,7 @@ restService.post('/inputmsg', function(req, res) {
                 }
                 res.json(returnJson);
             }
-            else if( rowCount == 1 ){
+            else if( rowCount >= 1 ){
                     
                     Index( req, res, function( result ) {
                         console.log("Index Called : " + JSON.stringify(result));
