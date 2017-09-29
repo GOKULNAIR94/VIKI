@@ -36,15 +36,15 @@ module.exports = function( req, res ) {
             varPath = '/inputmsg'; 
         }
     
-    if( intentName == 'Budget' || intentName == 'Expense' || intentName.indexOf( "DCP -" ) == 0 || intentName.indexOf( "ADS_" ) == 0 || intentName.indexOf( "Hyperion ADS -" ) == 0 || intentName == 'Hyperion - no - yes' ){
+    if( intentName == 'Budget' || intentName == 'Expense' || intentName.indexOf( "DCP -" ) == 0 || intentName.indexOf( "ADS_" ) == 0 || intentName.indexOf( "Hyperion ADS -" ) == 0 || intentName == 'Hyperion - no - yes' || intentName == 'reporting' ){
             varHost = 'vikiviki.herokuapp.com';
             varPath = '/inputmsg'; 
         }
         
-        if( intentName == 'reporting' ){
-            varHost = 'salty-tor-67194.herokuapp.com';
-            varPath = '/report';
-        }
+//        if( intentName == 'reporting' ){
+//            varHost = 'salty-tor-67194.herokuapp.com';
+//            varPath = '/report';
+//        }
         
         if( intentName == 'oppty' || intentName=='oppty - next' || intentName=='oppty - custom' || intentName.indexOf( "oppty - News" ) == 0 || intentName.indexOf( "Activities - Sales" ) == 0 ){
             //varHost = 'polar-sea-99105.herokuapp.com';
