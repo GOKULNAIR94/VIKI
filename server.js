@@ -169,15 +169,19 @@ restService.post('/inputmsg', function(req, res) {
                     LogOut( resObj.items[0].Id, req, res, function( req, res, statusCode ){
                         if( statusCode >= 200 && statusCode <= 205 ){
                             console.log( "Loggedout!" );
-                            speech = "You have successfully logged out! Feel free to ping me when you need my help! Bye!";
+                            speech = "You have successfully logged out! Feel free to ping me when you need my help!";
+                            res.json({
+                              speech: speech,
+                              displayText: speech
+                            });
+                        }else{
+                            speech = "Something went wrong! Please try again later!";
                             res.json({
                               speech: speech,
                               displayText: speech
                             });
                         }
-                    });
-                    
-                    
+                    });  
                 }
                 else{
                     Index( req, res, function( result ) {
