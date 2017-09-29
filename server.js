@@ -71,6 +71,7 @@ console.log('App . POST');
 
 
 var GetAuth = require("./getauth");
+var LogOut = require("./logout");
 
 restService.post('/inputmsg', function(req, res) {
     
@@ -158,17 +159,25 @@ restService.post('/inputmsg', function(req, res) {
                 res.json(returnJson);
             }
             else if( rowCount >= 1 ){
-                console.log("RecordId : " + JSON.stringify(resObj));
                 
+                //console.log("RecordId : " + JSON.stringify(resObj));
+                console.log("RecordId : " + resObj.items[0].Id);
                 var intentName = req.body.result.metadata.intentName;
                 console.log( "intentName : " + intentName );
+
                 if( intentName == "log_user_out - yes" ){
-                    console.log( "Loggedout!" );
-                    speech = "Logged Out!";
-                    res.json({
-                      speech: speech,
-                      displayText: speech
-                    })
+                    LogOut( resObj.items[0].Id, req, res, function( req, res, statusCode ){
+                        if( statusCode >= 200 && statusCode <= 205 ){
+                            console.log( "Loggedout!" );
+                            speech = "You have successfully logged out! Feel free to ping me when you need my help! Bye!";
+                            res.json({
+                              speech: speech,
+                              displayText: speech
+                            });
+                        }
+                    });
+                    
+                    
                 }
                 else{
                     Index( req, res, function( result ) {

@@ -49,6 +49,11 @@ module.exports = function ( req, res, callback){
             });
             resx.on('error', function(e) {
                 console.log("Got error: " + e.message);
+                speech = "Something went wrong! Please try again later!";
+                res.json({
+                  speech: speech,
+                  displayText: speech
+                });
             });
         });
     } catch (e) {
