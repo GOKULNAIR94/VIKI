@@ -18,6 +18,7 @@ restService.use(express.static(path.join(__dirname, '/public')));
 
 var someUserID = "";
 var userid = "";
+var recordId = "";
 function onRequest(request, response){
     someUserID = request.query.id;
     console.log(' Awe: someUserID : ' + someUserID);
@@ -104,7 +105,9 @@ restService.post('/inputmsg', function(req, res) {
             }
 		}
         
-        GetAuth( req, res, function( req, res, rowCount ){
+        GetAuth( req, res, function( req, res, resObj ){
+            var rowCount = resObj.count;
+            console.log(rowCount);
             
             if ( rowCount == 0 ) {
                 speech = "Hi! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! \nPlease Login @ https://vikii.herokuapp.com/login?id=" + userid;
@@ -155,11 +158,24 @@ restService.post('/inputmsg', function(req, res) {
                 res.json(returnJson);
             }
             else if( rowCount >= 1 ){
-                    
+                console.log("RecordId : " + JSON.stringify(resObj));
+                
+                var intentName = req.body.result.metadata.intentName;
+                console.log( "intentName : " + intentName );
+                if( intentName == "log_user_out - yes" ){
+                    console.log( "Loggedout!" );
+                    speech = "Logged Out!";
+                    res.json({
+                      speech: speech,
+                      displayText: speech
+                    })
+                }
+                else{
                     Index( req, res, function( result ) {
                         console.log("Index Called : " + JSON.stringify(result));
                     });
-                }
+                }         
+            }
         });
 //        
 //        var accessToken = req.body.originalRequest.data.user.access_token;

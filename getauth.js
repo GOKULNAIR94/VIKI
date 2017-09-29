@@ -41,7 +41,7 @@ module.exports = function ( req, res, callback){
                     var rowCount = resObj.count;
                     console.log(rowCount);
                     
-                    callback( req, res, rowCount );
+                    callback( req, res, resObj );
                     
                 } catch (error) {
                     console.log("Error: " + error);
