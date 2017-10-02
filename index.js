@@ -51,6 +51,13 @@ module.exports = function( req, res ) {
             varHost = 'opty.herokuapp.com';
             varPath = '/oppty';
         }
+        
+        if( intentName.indexOf( "opty_top" ) == 0 ){
+            //varHost = 'polar-sea-99105.herokuapp.com';
+            varHost = 'opty.herokuapp.com';
+            varPath = '/opptytop';
+        }
+        
         console.log( "varHost : " + varHost );
         console.log( "varPath : " + varPath);
 
