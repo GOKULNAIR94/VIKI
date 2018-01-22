@@ -20,7 +20,7 @@ module.exports = function ( req, res, callback){
                 console.log("Google userid : " + userid);
             }
         }
-        var varPath = "/salesApi/resources/latest/VikiAuthv2_c?q=UserId_c=" + userid + "&onlyData=true"
+        var varPath = "/salesApi/resources/latest/VikiAuth_c?q=UserId_c=" + userid + "&onlyData=true"
         console.log("varPath Login : " + varPath);
         var options = {
             host: 'acs.crm.ap2.oraclecloud.com',
