@@ -1,30 +1,59 @@
-def voOrder = newView('OrderCO_c');
-def orderR = voOrder.createRow()
+var app = angular.module('MyApp',["ngRoute"]);
+app.run(function(){
+    console.log("My App is Running!");
+});
 
-orderR.setAttribute('Account_Id_c',Account_Id_c);
-orderR.setAttribute('Contact_Id_c', Contact_Id_c);
-orderR.setAttribute('Opportunity_Id_c', Opportunity_Id_c );
-orderR.setAttribute('Partner_Id_c', Partner_Id_c);
-orderR.setAttribute('Amount_c', Amount_c );
+app.config(function($routeProvider) {    $routeProvider
+.when("/", {
+        templateUrl : "login.html"
+    })
+.when("/success", {
+        templateUrl : "success.html"
+    })
+.when("/loading", {
+        templateUrl : "loading.html"
+    });
+});
 
-def childOrderLineItems = QuoteLineItemCollection_c;
-if(nvl(childOrderLineItems,null) != null)
-{
-  childOrderLineItems.reset()
-  while (childOrderLineItems.hasNext())	
-  {
-    def curItem = childOrderLineItems.next();
-    def orderLineItemR = orderR.OrderLineItemCollection_c
-    def newOrderLineItem = orderLineItemR.createRow()
 
-    newOrderLineItem.setAttribute('Product_Id_c',curItem.InventoryItemId);
-    newOrderLineItem.setAttribute('Quantity_c',curItem.Quantity)
-    newOrderLineItem.setAttribute('EstimatedPrice_c',curItem.UnitPrice)
-    newOrderLineItem.setAttribute('Revenue_c',curItem.RevnAmount)
-
-    orderLineItemR.insertRow(newOrderLineItem)
-  }
-}
-voOrder.insertRow(orderR)
-
-throw new oracle.jbo.ValidationException('Quote has been submitted successfully') 
+app.controller('mainCont', function($scope, $http, $location) {
+    console.log("This is Main Controller!");
+    
+    $scope.sendData = function (newuser) {
+        console.log(newuser);
+        var req = {
+            method: 'POST',
+            url: 'https://vikii.herokuapp.com/newuser',
+            data: newuser
+        }
+        $http(req).then(function (result) {
+            console.log( "Result : " + JSON.stringify(result));
+            if(result.status == 200){
+                
+                if(result.data == "Success"){
+                    $scope.loginerror = false;
+                    $location.path('\success');
+                    $scope.loginerror = "";
+                    setTimeout(function () {
+                        window.close();
+                    }, 1500);
+                }
+                    
+                else{
+                    $scope.loginerror = true;
+                    $scope.errormessage = "Please check the credentials and try again! ";
+                    $location.path('\/');                
+                }
+                    
+            }
+                
+            else{
+                alert("Error");
+                $scope.errormessage = "Unexpected Error Occured! Try again later!";
+                $location.path('\/');
+            }
+            
+        });
+    };
+    
+});
