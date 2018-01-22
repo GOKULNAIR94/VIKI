@@ -2,7 +2,7 @@ module.exports = function ( recordId, req, res, callback){
     var https = require('https');
     var userid = "";
     try {
-        var varPath = "/salesApi/resources/latest/TestKaaman1/" + recordId;
+        var varPath = "/salesApi/resources/latest/TestKaaman1_c/" + recordId;
         console.log("varPath Login : " + varPath);
         var options = {
             "method": "DELETE",
