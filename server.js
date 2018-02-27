@@ -12,6 +12,8 @@ restService.use(bodyParser.urlencoded({
 restService.use(bodyParser.json());
 
 var Index = require("./index");
+var Google = require("./google");
+
 var speech = "";
 restService.get('/login', onRequest);
 restService.use(express.static(path.join(__dirname, '/public')));
@@ -184,9 +186,17 @@ restService.post('/inputmsg', function(req, res) {
                     });  
                 }
                 else{
-                    Index( req, res, function( result ) {
-                        console.log("Index Called : " + JSON.stringify(result));
-                    });
+                    if( intentName == "Default Fallback Intent - Will Do this later" ){
+                        Google( req, res, function( result ) {
+                            console.log("Google Called : " + JSON.stringify(result));
+                        });
+                    }
+                    else{
+                        Index( req, res, function( result ) {
+                            console.log("Index Called : " + JSON.stringify(result));
+                        });
+                    }
+                    
                 }         
             }
         });
