@@ -36,12 +36,12 @@ module.exports = function(req, res) {
                     var qString = "SELECT Name, COUNT(ID) AS lcount FROM LeavesTable WHERE ApprovalStatus='Pending' GROUP BY Name";
                     QueryDB(qString, req, res, function(leresult) {
                         if (leresult.rowsAffected != 0) {
-                            leaveCount = leresult.rowsAffected.lcount;
+                            leaveCount = leresult.rowsAffected;
                         }
                         var qString = "SELECT EmployeeName, COUNT(ID) AS lcount FROM TimeSheets WHERE ApprovalStatus='Pending' GROUP BY EmployeeName";
                         QueryDB(qString, req, res, function(tmresult) {
                             if (tmresult.rowsAffected != 0) {
-                                tmCount = tmresult.rowsAffected.lcount;
+                                tmCount = tmresult.rowsAffected;
                             }
 
                             if (leaveCount == 0 && tmCount == 0) {
