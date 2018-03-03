@@ -24,7 +24,7 @@ module.exports = function( req, res ) {
         if( intentName == "Activities")
         {
             var time = date.format(new Date(), 'hh:mm A');
-            var date = date.format(new Date(), 'ddd MMM DD YYYY');
+            var date = date.format(new Date(), 'dddd MMMM DD YYYY');
             speech = "Its " + time + " " + date + ".\nWhat activitites would you like to see. HR or Sales?";
          return res.json({
               speech: speech,
