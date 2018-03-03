@@ -21,7 +21,7 @@ module.exports = function( req, res ) {
           displayText: speech
         })
     }   
-    if( intentName == "Activities")
+    if( intentName == "Activities - HR")
     {
         var time = date.format(new Date(), 'hh:mm A');
         var date = date.format(new Date(), 'ddd MMM DD YYYY');
