@@ -23,7 +23,7 @@ module.exports = function(req, res) {
             if (intentName == "Activities") {
                 var time = date.format(new Date(), 'hh:mm A');
                 var date = date.format(new Date(), 'dddd MMMM DD YYYY');
-                speech = "Its " + time + " " + date + ".\nWhat activitites would you like to see. HR or Sales?";
+                speech = "Its " + time + " " + date + ".\nWhat activities would you like to see. HR or Sales?";
                 return res.json({
                     speech: speech,
                     displayText: speech
@@ -47,7 +47,7 @@ module.exports = function(req, res) {
                             if (leaveCount == 0 && tmCount == 0) {
                                 speech = speech + "You have no pending HR activities for today."
                             } else {
-                                speech = speech + "You have the following pending activities: "
+                                speech = speech + "You have the following pending activities: \n"
                                 if (leaveCount != 0) {
                                     speech = speech + leaveCount + " Leave requests.\n";
                                 }
