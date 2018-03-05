@@ -26,12 +26,12 @@ module.exports = function(req, res) {
                 speech = "Its " + time + " " + date + ". \n";
                 var weather = require('weather-js');
 
-                weather.find({search: '400708', degreeType: 'C'}, function(err, result) {
+                weather.find({search: '680010', degreeType: 'C'}, function(err, result) {
                   if(err){
                        console.log(err);
                   }else{
                       console.log(JSON.stringify(result, null, 2));
-                      speech = speech + "Currently in Navi Mumbai, it's " + result[0].current.temperature + " and " + result[0].current.skytext + ". \n";
+                      speech = speech + "Currently in Navi Mumbai, it's " + result[0].current.temperature + " and " + result[0].forecast[1].skytextday + ". \n";
                   }
                     speech = speech + "You have couple of HR and Sales activities for the day. What activities would you like to see. HR or Sales?";
                     return res.json({
