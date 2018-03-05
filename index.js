@@ -23,11 +23,22 @@ module.exports = function(req, res) {
             if (intentName == "Activities") {
                 var time = date.format(new Date(), 'hh:mm A');
                 var date = date.format(new Date(), 'dddd MMMM DD YYYY');
-                speech = "Its " + time + " " + date + ".\nWhat activities would you like to see. HR or Sales?";
-                return res.json({
-                    speech: speech,
-                    displayText: speech
+                speech = "Its " + time + " " + date + ".\n ";//What activities would you like to see. HR or Sales?
+                var weather = require('weather-js');
+
+                weather.find({search: '400708', degreeType: 'C'}, function(err, result) {
+                  if(err){
+                       console.log(err);
+                  }else{
+                      console.log(JSON.stringify(result, null, 2));
+                      speech = speech + "Currently in Navi Mumbai, it's " + result.current.temperature + " and " + result.current.skytext + ".";
+                  }
+                    return res.json({
+                        speech: speech,
+                        displayText: speech
+                    });
                 });
+                
 
             } else {
                 if (intentName == "Activities - HR") {
