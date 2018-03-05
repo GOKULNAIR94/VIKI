@@ -167,6 +167,7 @@ module.exports = function(req, res) {
         }
 
     } catch (e) {
+        console.log("Error : " + e);
         speech = "Unable to process the request. Please try again later.";
         res.json({
             speech: speech,

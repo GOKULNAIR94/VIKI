@@ -28,7 +28,8 @@
     "mssql": "^4.1.0",
     "open": "0.0.5",
     "opn": "^5.1.0",
-    "request": "^2.76.0"
+    "request": "^2.76.0",
+    "weather-js": "^2.0.0"
   },
   "devDependencies": {},
   "description": ""
