@@ -31,7 +31,7 @@ module.exports = function(req, res) {
                        console.log(err);
                   }else{
                       console.log(JSON.stringify(result, null, 2));
-                      speech = speech + "Currently in Navi Mumbai, it's " + result.current.temperature + " and " + result.current.skytext + ".";
+                      speech = speech + "Currently in Navi Mumbai, it's " + result[0].current.temperature + " and " + result[0].current.skytext + ".";
                   }
                     return res.json({
                         speech: speech,
