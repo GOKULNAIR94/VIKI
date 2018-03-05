@@ -23,7 +23,7 @@ module.exports = function(req, res) {
             if (intentName == "Activities") {
                 var time = date.format(new Date(), 'hh:mm A');
                 var date = date.format(new Date(), 'dddd MMMM DD YYYY');
-                speech = "Its " + time + " " + date + ". \n";
+                speech = "Its " + time + ", " + date + ". \n";
                 var weather = require('weather-js');
 
                 weather.find({search: '680010', degreeType: 'C'}, function(err, result) {
