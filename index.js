@@ -66,6 +66,7 @@ module.exports = function(req, res) {
                                 if (tmCount != 0) {
                                     speech = speech + tmCount + " Timesheet requests.\n";
                                 }
+                                 speech = speech + " \nWhat requests would you like to see?"
 
                             }
                             return res.json({
