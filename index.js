@@ -23,7 +23,8 @@ module.exports = function(req, res) {
             if (intentName == "Activities") {
                 var time = date.format(new Date(), 'hh:mm A');
                 var date = date.format(new Date(), 'dddd MMMM DD YYYY');
-                speech = "Its " + time + ", " + date + ". \n";
+                var speechText = "Its " + time + ", " + date + ". \n";
+                speech = speechText;
                 var weather = require('weather-js');
 
                 weather.find({search: '680010', degreeType: 'C'}, function(err, result) {
@@ -31,12 +32,13 @@ module.exports = function(req, res) {
                        console.log(err);
                   }else{
                       console.log(JSON.stringify(result, null, 2));
-                      speech = speech + "Currently in Navi Mumbai, it's " + result[0].current.temperature + "°C and sky is " + result[0].forecast[1].skytextday + ". \n";
+                      speechText = speechText + "Currently in Navi Mumbai, it's " + result[0].current.temperature + "°C and sky is " + result[0].forecast[1].skytextday + ". \n";
                   }
-                    speech = speech + "You have couple of HR and Sales activities for the day. What activities would you like to see. HR or Sales?";
+                    speechText = speechText + "You have couple of HR and Sales activities for the day. What activities would you like to see. HR or Sales?";
+                    speech = speech + speechText;
                     return res.json({
                         speech: speech,
-                        displayText: speech
+                        displayText: speechText
                     });
                 });
                 
