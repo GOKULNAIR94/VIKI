@@ -27,7 +27,7 @@ module.exports = function(req, res) {
                 speech = speechText;
                 var weather = require('weather-js');
 
-                weather.find({search: '680010', degreeType: 'C'}, function(err, result) {
+                weather.find({search: '400708', degreeType: 'C'}, function(err, result) {
                   if(err){
                        console.log(err);
                   }else{
@@ -35,7 +35,7 @@ module.exports = function(req, res) {
                       speechText = speechText + "Currently in Navi Mumbai, it's " + result[0].current.temperature + "°C and sky is " + result[0].forecast[1].skytextday + ". \n";
                   }
                     speechText = speechText + "You have couple of HR and Sales activities for the day. What activities would you like to see. HR or Sales?";
-                    speech = speech + speechText;
+                    speech = speech +  "You have couple of HR and Sales activities for the day. What activities would you like to see. HR or Sales?";
                     return res.json({
                         speech: speech,
                         displayText: speechText
