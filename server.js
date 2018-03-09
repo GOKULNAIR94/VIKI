@@ -62,35 +62,48 @@ restService.post('/inputmsg', function(req, res) {
                     console.log("Default");
             }
         }
-        var url = "/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code";
+        var http = require("https");
+
         var options = {
-            host: 'login.microsoftonline.com',
-            path: url
+          "method": "GET",
+          "hostname": "login.microsoftonline.com",
+          "path": "/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code"
         };
-        var responseString = "";
-        var request = https.get( options, function(resx) {
-            resx.on('data', function(data) {
-                responseString += data;
-            });
-            resx.on('end', function() {
-                try {
-                     console.log('statusCode:'+ response.statusCode);
-                    console.log('headers:'+ response.headers);
-                    console.log("data : " + responseString);
-                    
-                } catch (error) {
-                    console.log("Error: " + error);
-                }
-            });
-            resx.on('error', function(e) {
-                console.log("Got error: " + e.message);
+
+        var req = http.request(options, function (res) {
+          var chunks = [];
+
+          res.on("data", function (chunk) {
+            chunks.push(chunk);
+          });
+
+          res.on("end", function () {
+              try{
+                  console.log("Hi");
+                  var body = Buffer.concat(chunks);
+                    console.log(body.toString());
+              }
+              catch(e){
+                  console.log("e :" + e);
                 speech = "Under maintenance! Sorry!";
                 res.json({
                   speech: speech,
                   displayText: speech
                 });
-            });
+              }
+          });
+        res.on("error", function (e) {
+            console.log("E : " + e);
+                speech = "Under maintenance! Sorry!";
+                res.json({
+                  speech: speech,
+                  displayText: speech
+                });
+            
+          });
         });
+
+        req.end();
         
     } catch (e) {
         console.log("Error : " + e);
