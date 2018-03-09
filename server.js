@@ -70,14 +70,15 @@ restService.post('/inputmsg', function(req, res) {
           "path": "/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code"
         };
 
-        var req = https.request(options, function (res) {
+        var reqOut = https.request(options, function (resOut) {
           var chunks = [];
 
-          res.on("data", function (chunk) {
+          resOut.on("data", function (chunk) {
             chunks.push(chunk);
+              console.log(chunk);
           });
 
-          res.on("end", function () {
+          resOut.on("end", function () {
               try{
                   console.log("Hi");
                   var body = Buffer.concat(chunks);
@@ -92,7 +93,7 @@ restService.post('/inputmsg', function(req, res) {
                 });
               }
           });
-        res.on("error", function (e) {
+        resOut.on("error", function (e) {
             console.log("E : " + e);
                 speech = "Under maintenance! Sorry!";
                 res.json({
@@ -103,7 +104,7 @@ restService.post('/inputmsg', function(req, res) {
           });
         });
 
-        req.end();
+        reqOut.end();
         
     } catch (e) {
         console.log("Error : " + e);
