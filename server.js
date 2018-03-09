@@ -54,7 +54,7 @@ restService.post('/inputmsg', function(req, res) {
                     console.log("Google userid : " + userid);
                     break;
                 case "facebook":
-                    userid = req.body.originalRequest.data.sender.Id;
+                    userid = req.body.originalRequest.data.sender.id;
                     console.log("Facebook userid : " + userid);
                     break;
 
