@@ -64,11 +64,11 @@ restService.post('/inputmsg', function(req, res) {
         }
         var url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code";
         
-        https.get(url, (res) => {
-          console.log('statusCode:'+ res.statusCode);
-          console.log('headers:'+ res.headers);
+        https.get(url, (response) => {
+          console.log('statusCode:'+ response.statusCode);
+          console.log('headers:'+ response.headers);
 
-          res.on('data', (d) => {
+          response.on('data', (d) => {
               console.log("data : " + d);
           });
 
