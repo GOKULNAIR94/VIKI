@@ -63,17 +63,29 @@ restService.post('/inputmsg', function(req, res) {
             }
         }
         var url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code";
-        
-        https.get(url, (response) => {
-          console.log('statusCode:'+ response.statusCode);
-          console.log('headers:'+ response.headers);
-
-          response.on('data', (d) => {
-              console.log("data : " + d);
-          });
-
-        }).on('error', (e) => {
-          console.error(e);
+        var responseString = "";
+        https.get( url, function(resx) {
+            resx.on('data', function(data) {
+                responseString += data;
+            });
+            resx.on('end', function() {
+                try {
+                     console.log('statusCode:'+ response.statusCode);
+                    console.log('headers:'+ response.headers);
+                    console.log("data : " + responseString);
+                    
+                } catch (error) {
+                    console.log("Error: " + error);
+                }
+            });
+            resx.on('error', function(e) {
+                console.log("Got error: " + e.message);
+                speech = "Under maintenance! Sorry!";
+                res.json({
+                  speech: speech,
+                  displayText: speech
+                });
+            });
         });
         
     } catch (e) {
