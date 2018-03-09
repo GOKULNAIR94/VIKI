@@ -78,14 +78,13 @@ restService.post('/inputmsg', function(req, res) {
 
           resOut.on("data", function (chunk) {
             chunks.push(chunk);
-              console.log(chunk);
           });
 
           resOut.on("end", function () {
               try{
                   console.log("Hi");
                   var body = Buffer.concat(chunks);
-                    console.log(body.toString());
+                    resOut.render(body);
               }
               catch(e){
                   console.log("e :" + e);
