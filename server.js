@@ -62,9 +62,13 @@ restService.post('/inputmsg', function(req, res) {
                     console.log("Default");
             }
         }
-        var url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code";
+        var url = "/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code";
+        var options = {
+            host: 'login.microsoftonline.com',
+            path: url
+        };
         var responseString = "";
-        https.get( url, function(resx) {
+        var request = https.get( options, function(resx) {
             resx.on('data', function(data) {
                 responseString += data;
             });
