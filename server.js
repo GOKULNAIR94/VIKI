@@ -62,49 +62,55 @@ restService.post('/inputmsg', function(req, res) {
                     console.log("Default");
             }
         }
+        res.redirect('https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code/');
 
 
-        var options = {
-          "method": "GET",
-          "hostname": "login.microsoftonline.com",
-          "path": "/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code",
-          "headers": {
-            "content-type": "text/html"
-          }
-        };
-
-        var reqOut = https.request(options, function (resOut) {
-          var chunks = [];
-
-          resOut.on("data", function (chunk) {
-            chunks.push(chunk);
-          });
-
-          resOut.on("end", function () {
-              try{
-                  console.log("Hi");
-                  var body = Buffer.concat(chunks);
-                    resOut.render(body);
-              }
-              catch(e){
-                  console.log("e :" + e);
-                speech = "Under maintenance! Sorry!";
-                res.json({
-                  speech: speech,
-                  displayText: speech
-                });
-              }
-          });
-        resOut.on("error", function (e) {
-            console.log("E : " + e);
-                speech = "Under maintenance! Sorry!";
-                res.json({
-                  speech: speech,
-                  displayText: speech
-                });
-            
-          });
-        });
+//        var options = {
+//          "method": "GET",
+//          "hostname": "login.microsoftonline.com",
+//          "path": "/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code",
+//          "headers": {
+//            "content-type": "text/html"
+//          }
+//        };
+//
+//        var reqOut = https.request(options, function (resOut) {
+//          var chunks = [];
+//
+//          resOut.on("data", function (chunk) {
+//            chunks.push(chunk);
+//          });
+//
+//          resOut.on("end", function () {
+//              try{
+//                  console.log("Hi");
+//                  var body = Buffer.concat(chunks);
+//                    resOut.render(body);
+////                    speech = "Please login!";
+////                    res.json({
+////                      speech: speech,
+////                      displayText: speech
+////                    });
+//              }
+//              catch(e){
+//                  console.log("e :" + e);
+//                speech = "Under maintenance! Sorry!";
+//                res.json({
+//                  speech: speech,
+//                  displayText: speech
+//                });
+//              }
+//          });
+//        resOut.on("error", function (e) {
+//            console.log("E : " + e);
+//                speech = "Under maintenance! Sorry!";
+//                res.json({
+//                  speech: speech,
+//                  displayText: speech
+//                });
+//            
+//          });
+//        });
 
         reqOut.end();
         
