@@ -16,6 +16,7 @@ var olLogin = require("./ollogin");
 
 var speech = "";
 var userid = "";
+
 restService.get('/outcallback', function(request, response) {
     var code = request.query.code;
     console.log("Code : " + code);
@@ -32,7 +33,6 @@ restService.post('/inputmsg', function(req, res) {
 
 
         console.log("Req  : " + JSON.stringify(req.body));
-        req.body.headers = req.headers;
 
         if (req.body.originalRequest != null) {
 
@@ -65,8 +65,8 @@ restService.post('/inputmsg', function(req, res) {
         var url = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code";
         
         https.get(url, (res) => {
-          console.log('statusCode:', res.statusCode);
-          console.log('headers:', res.headers);
+          console.log('statusCode:'+ res.statusCode);
+          console.log('headers:'+ res.headers);
 
           res.on('data', (d) => {
               console.log("data : " + d);
