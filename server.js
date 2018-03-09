@@ -67,7 +67,10 @@ restService.post('/inputmsg', function(req, res) {
         var options = {
           "method": "GET",
           "hostname": "login.microsoftonline.com",
-          "path": "/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code"
+          "path": "/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code",
+          "headers": {
+            "content-type": "text/html"
+          }
         };
 
         var reqOut = https.request(options, function (resOut) {
