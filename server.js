@@ -27,6 +27,11 @@ function onRequest(request, response){
   response.sendFile(path.join(__dirname, '/public/index.html'));
 }
 
+restService.get('/outlook',function(request,response){
+    var code = request.query.code;
+    console.log("Code : " + code);
+});
+
 restService.post('/newuser',function(request,response){
 console.log('App . POST');
 //console.log('Req : '+ JSON.stringify(request.body)  );
