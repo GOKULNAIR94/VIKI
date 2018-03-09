@@ -1,25 +1,8 @@
 module.exports = function ( req, res, callback){
     var https = require('https');
-    var userid = "";
+    
+    
     try {
-        if (req.body.originalRequest != null) {
-            if (req.body.originalRequest.source == "skype") {
-                userid = req.body.originalRequest.data.address.user.id;
-                console.log("skype userid : " + userid);
-            }
-            if (req.body.originalRequest.source == "slack") {
-                userid = req.body.originalRequest.data.event.user;
-                console.log("Slack userid : " + userid);
-            }
-            if (req.body.originalRequest.source == "twitter") {
-                userid = req.body.originalRequest.data.direct_message.sender_id;
-                console.log("Twitter userid : " + userid);
-            }
-            if (req.body.originalRequest.source == "google") {
-                userid = req.body.originalRequest.data.user.userId;
-                console.log("Google userid : " + userid);
-            }
-        }
         var varPath = "/salesApi/resources/latest/VikiAuth_c?q=UserId_c=" + userid + "&onlyData=true"
         console.log("varPath Login : " + varPath);
         var options = {
@@ -37,12 +20,7 @@ module.exports = function ( req, res, callback){
             });
             resx.on('end', function() {
                 try {
-                    resObj = JSON.parse(responseString);
-                    var rowCount = resObj.count;
-                    console.log(rowCount);
-                    
-                    callback( req, res, resObj );
-                    
+                    callback( resObj );
                 } catch (error) {
                     console.log("Error: " + error);
                 }

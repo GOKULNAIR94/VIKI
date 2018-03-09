@@ -15,7 +15,7 @@ var Index = require("./index");
 var olLogin = require("./ollogin");
 
 var speech = "";
-
+var userid = "";
 restService.get('/outcallback', function(request, response) {
     var code = request.query.code;
     console.log("Code : " + code);
