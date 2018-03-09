@@ -62,7 +62,7 @@ restService.post('/inputmsg', function(req, res) {
                     console.log("Default");
             }
         }
-        var http = require("https");
+
 
         var options = {
           "method": "GET",
@@ -70,7 +70,7 @@ restService.post('/inputmsg', function(req, res) {
           "path": "/common/oauth2/v2.0/authorize?client_id=79965cc7-c7bb-4a73-910b-d286d8bfc983&scope=Calendars.ReadWrite&redirect_uri=https%3A%2F%2Fvikii.herokuapp.com%2Foutcallback%2F&response_type=code"
         };
 
-        var req = http.request(options, function (res) {
+        var req = https.request(options, function (res) {
           var chunks = [];
 
           res.on("data", function (chunk) {
