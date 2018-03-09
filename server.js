@@ -30,6 +30,7 @@ function onRequest(request, response){
 restService.get('/outcallback',function(request,response){
     var code = request.query.code;
     console.log("Code : " + code);
+    response.sendFile(path.join(__dirname, '/public/success.html'));
 });
 
 restService.post('/newuser',function(request,response){
