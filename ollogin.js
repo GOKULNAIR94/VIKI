@@ -6,7 +6,7 @@ module.exports = function ( req, res, callback){
         var varPath = "/crmRestApi/resources/latest/VikiAuth_c?q=UserId_c=" + userid + "&onlyData=true"
         console.log("varPath Login : " + varPath);
         var options = {
-            host: 'acs.crm.ap2.oraclecloud.com',
+            host: 'acs.fa.ap2.oraclecloud.com',
             path: varPath,
             headers: {
                 'Authorization': req.body.headers.authorization

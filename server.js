@@ -40,7 +40,7 @@ console.log('App . POST');
     console.log('vikiAuthBody : '+ JSON.stringify( vikiAuthBody )  );
   
     var newoptions = {
-        host: 'acs.crm.ap2.oraclecloud.com',
+        host: 'acs.fa.ap2.oraclecloud.com',
         port: 443,
         path: '/crmRestApi/resources/latest/VikiAuth_c/',
         data: vikiAuthBody,

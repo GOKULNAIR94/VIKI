@@ -6,7 +6,7 @@ module.exports = function ( recordId, req, res, callback){
         console.log("varPath Login : " + varPath);
         var options = {
             "method": "DELETE",
-            host: 'acs.crm.ap2.oraclecloud.com',
+            host: 'acs.fa.ap2.oraclecloud.com',
             path: varPath,
             headers: {
                 'Authorization': req.body.headers.authorization
