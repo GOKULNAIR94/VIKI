@@ -3,7 +3,7 @@ module.exports = function ( req, res, callback){
     
     
     try {
-        var varPath = "/salesApi/resources/latest/VikiAuth_c?q=UserId_c=" + userid + "&onlyData=true"
+        var varPath = "/crmRestApi/resources/latest/VikiAuth_c?q=UserId_c=" + userid + "&onlyData=true"
         console.log("varPath Login : " + varPath);
         var options = {
             host: 'acs.crm.ap2.oraclecloud.com',
