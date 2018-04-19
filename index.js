@@ -99,13 +99,13 @@ module.exports = function(req, res) {
                         //            varPath = '/report';
                         //        }
 
-                        if (intentName == 'oppty' || intentName == 'oppty - next' || intentName == 'oppty - custom' || intentName.indexOf("oppty - News") == 0 || intentName.indexOf("Activities - Sales") == 0) {
+                        if (intentName == 'oppty - next' || intentName == 'oppty - custom' || intentName.indexOf("oppty - News") == 0 || intentName.indexOf("Activities - Sales") == 0) {
                             //varHost = 'polar-sea-99105.herokuapp.com';
                             varHost = 'opty.herokuapp.com';
                             varPath = '/oppty';
                         }
 
-                        if (intentName.indexOf("opty_top") == 0) {
+                        if ( intentName == 'oppty' ||  intentName.indexOf("opty_top") == 0) {
                             //varHost = 'polar-sea-99105.herokuapp.com';
                             varHost = 'opty.herokuapp.com';
                             varPath = '/opptytop';
