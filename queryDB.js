@@ -2,9 +2,9 @@ module.exports = function ( qString, req, resp, callback){
     
     var sql = require("mssql");
     var sqlConfig = {
-        user: 'viki',
-        password: 'Oracle123',
-        server: 'vikisql.c1abev5luwmn.us-west-1.rds.amazonaws.com',
+        user: req.body.headers.sqluser,
+        password: req.body.headers.sqlpw,
+        server: req.body.headers.sqlserver,
         database: 'viki'
     }
     console.log("Qstring : " + qString);
