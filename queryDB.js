@@ -1,5 +1,6 @@
 module.exports = function ( qString, req, resp, callback){
-    
+
+    console.log("Header :" + JSON.stringify(req.body.headers));
     var sql = require("mssql");
     var sqlConfig = {
         user: req.body.headers.sqluser,
@@ -7,6 +8,7 @@ module.exports = function ( qString, req, resp, callback){
         server: req.body.headers.sqlserver,
         database: 'viki'
     }
+    console.log("SQL :" + JSON.stringify(sqlConfig));
     console.log("Qstring : " + qString);
     sql.connect(sqlConfig, function(err) {
         var request = new sql.Request();
